@@ -1,25 +1,36 @@
-#import "template/bach.typ": bach
+#import "template/bach.typ": bach, table-figure, code-figure
 
 #show: content => bach(
-    title: "DEVELOPMENT OF AN INTELLIGENT CODE REVIEWER RECOMMENDATIONS SYSTEM FOR PROGRAMMING CONVENTIONS",
-    author: "Ekekwe Tanyalouise",
-    matric: "30XX123456",
-    supervisor: "Dr. Supervisor",
+    title: "Development of an Intelligent Code Reviewer Recommendation System for Programming Conventions",
+    author: "Ekekwe Tanyalouise Kelechi Chisom",
+    matric: "20CG028072",
+    supervisor: "Dr. Itunuoluwa Isewon",
     reference-path: "../references.bib",
+    dedication: [I dedicate this work to God, who has been my very present help in times of need during my 4-year journey in this institution. I also dedicate this work to my friends and family, who support me.],
+    acknowledgements: [My most profound gratitude goes to Almighty God, who has kept me and sustained me right from the very start of my degree up until this point. To Him be all the glory.
+    
+    \
+I want to express my sincere gratitude to my younger sister, Daniella Ekekwe, who continues to encourage me to follow my passion in computer science, especially during the course of this project.
+
+\
+I am extremely grateful to my parents, Mr and Mrs Ekekwe for their sacrifices, contributions, and prayers towards the completion of this degree.I am extremely privileged to have them in my life.
+
+\
+My sincere gratitude also goes to my hardworking supervisor, Dr Itunuoluwa Isewon, who provided her support even when she was on a work break. Thank you for your excellent supervision and guidance ma.],
     content,
 )
 
 #par([
-    = CHAPTER ONE: INTRODUCTION
+    = Introduction
     \
-    == BACKGROUND INFORMATION
+    == Background Information
     \
 
-    The evolution of coding standards and best practices has deep roots, dating back to the early days of programming @dijkstra_1972_structured. As software development methodologies and technologies have advanced, so too have coding standards. This co-evolution is particularly evident when examining the shift from structured programming in the 1960s to object-oriented programming in the 1980s @pratap_2023_the. Early coding standards emerged alongside structured programming to promote modular, readable code and followed a clear control flow; these characteristics became essential as software projects grew in complexity @michael_2015_the. Structured programming approaches like top­down design and control flow statements (if statements, loops) rely on well ­formatted code to be easily understandable and maintainable. Object-­oriented design principles like encapsulation and code reusability are best achieved through consistent naming conventions and code organization. 
+    The evolution of coding standards and best practices has deep roots, dating back to the early days of programming @dijkstra_1972_structured. As software development methodologies and technologies have advanced, so have coding standards. This co-evolution is particularly evident when examining the shift from structured programming in the 1960s to object-oriented programming in the 1980s @pratap_2023_the. Early coding standards emerged alongside structured programming to promote modular, readable code and followed a clear control flow; these characteristics became essential as software projects grew in complexity @michael_2015_the. Structured programming approaches like top­down design and control flow statements (if statements, loops) rely on well ­formatted code to be easily understandable and maintainable. Object-­oriented design principles like encapsulation and code reusability are best achieved through consistent naming conventions and code organization. 
 
 \
 
-Among software engineering techniques, programming conventions play a critical role in promoting the readability of source code @id_2023. These conventions, which can encompass aspects like indentation, naming conventions, and code formatting, act as a shared language for developers, allowing them to quickly grasp the purpose and structure of the code, even if written by someone else @chen_2018_an. /*Understandably, new programmers are eager to understand the basic functions of languages and to develop programs that work, often neglecting to apply coding conventions during their development workflow.*/ According to #cite(<kourie_2008_reflections>, form: "prose"), there is a need to formally educate students to become professional, responsible, and reliable developers capable of producing quality code. However, #cite(<wiese_2017_teaching>, form: "prose") identifies a gap in the existing literature directed at teaching programming conventions during the initial stages of programming education. A concerning find, as poorly formatted and inconsistently named code becomes a major hurdle as projects grow in size and complexity, hindering both understanding and maintenance. /*Furthermore, failing to follow established conventions creates friction within development teams, as inconsistent coding styles make it difficult for teammates to collaborate effectively.*/ If early adoption of programming conventions is prioritized, beginner programmers can lay a solid foundation of clean, maintainable, and collaborative code throughout their software development journey @keuing_tutoring. 
+Among software engineering techniques, programming conventions play a critical role in promoting the readability of source code @id_2023. These conventions, which can encompass aspects like indentation, naming conventions, and code formatting, act as a shared language for developers, allowing them to quickly grasp the purpose and structure of the code, even if written by someone else @chen_2018_an. /*Understandably, new programmers are eager to understand the basic functions of languages and to develop programs that work, often neglecting to apply coding conventions during their development workflow.*/ According to #cite(<kourie_2008_reflections>, form: "prose"), there is a need to formally educate students to become professional, responsible, and reliable developers capable of producing quality code. However, #cite(<wiese_2017_teaching>, form: "prose") identifies a gap in the existing literature directed at teaching programming conventions during the initial stages of programming education. A concerning find, as poorly formatted and inconsistently named code becomes a significant hurdle as projects grow in size and complexity, hindering both understanding and maintenance. /*Furthermore, failing to follow established conventions creates friction within development teams, as inconsistent coding styles make it difficult for teammates to collaborate effectively.*/ If early adoption of programming conventions is prioritized, beginner programmers can lay a solid foundation of clean, maintainable, and collaborative code throughout their software development journey @keuing_tutoring. 
 
 \
 
@@ -27,148 +38,126 @@ One potential solution to bridge this gap and encourage early adoption of coding
 
 \
 
-While established code reviewing platforms like those offered by GitHub and Codacy are valuable tools in the programmer’s arsenal, they have a blind spot, coding conventions. These platforms primarily focus on identifying functional errors and bugs, ensuring the code works as intended @bada_modern. However, they often fall short in addressing whether the code adheres to established coding conventions. Some might offer essential error messages related to “code smells” or stylistic inconsistencies, but lack the depth and interactivity needed to be a true learning resource for beginners who need to understand the “why” behind coding conventions @wessel_github.  This gap in feedback leaves aspiring programmers vulnerable to developing bad habits and writing code that becomes a tangled mess down the line. 
+While established code reviewing platforms like those offered by GitHub and Codacy are valuable tools in the programmer’s arsenal, they have a blind spot, coding conventions. These platforms primarily focus on identifying functional errors and bugs, ensuring the code works as intended @bada_modern. However, they often fall short in addressing whether the code adheres to established coding conventions. Some might offer essential error messages related to “code smells” or stylistic inconsistencies but lack the depth and interactivity needed to be a true learning resource for beginners who need to understand the “why” behind coding conventions @wessel_github.  This gap in feedback leaves aspiring programmers vulnerable to developing bad habits and writing code that becomes a tangled mess down the line. 
 
 \
 
-Intelligent code reviewing tools, designed specifically for beginners, can address this limitation by transforming code review into a powerful learning resource. These tools leverage AI and established coding standards to go beyond simply highlighting missed conventions (Kim et. al., #cite(<kim_automated_code>, form: "year")) This study proposes a real­time mentor who does not just point out formatting issues (a language linter) but also suggests best practices and alternative approaches based on the specific code and its intended function. /*This personalized learning experience empowers beginners to adhere to conventions and truly understand the rationale behind them, fostering a deeper grasp of good coding practices.*/ The shift towards a more interactive and personalized learning experience could significantly improve the quality, maintainability, and understanding of code written by beginners. Ultimately, this will lead to a smoother transition into professional software development by equipping them with the necessary skills to write clean, maintainable, and collaborative code from the outset. 
+Intelligent code reviewing tools, designed specifically for beginners, can address this limitation by transforming code review into a powerful learning resource. These tools leverage AI and established coding standards to go beyond simply highlighting missed conventions (Kim et al., #cite(<kim_automated_code>, form: "year")). This study proposes a real­time mentor who does not just point out formatting issues (a language linter) but also suggests best practices and alternative approaches based on the specific code and its intended function. /*This personalized learning experience empowers beginners to adhere to conventions and truly understand the rationale behind them, fostering a deeper grasp of good coding practices.*/ The shift towards a more interactive and personalized learning experience could significantly improve the quality, maintainability, and understanding of code written by beginners. Ultimately, this will lead to a smoother transition into professional software development by equipping them with the necessary skills to write clean, maintainable, and collaborative code from the outset. 
 ])
 
 #par([
     \
-    == STATEMENT OF THE PROBLEM
+    == Statement of the Problem
     
     \
 
-The initial stages of learning to program are often focused on core functionalities and building working programs, coding standards often get sidelined. Understandably, new programmers are eager to understand the basic functions of languages and to develop programs that work, often neglecting to apply coding conventions during their development workflow. According to research conducted by #cite(<joni_discourse>, form: "prose"), 90% of students used the wrong coding standards in programming exercises and #cite(<temp_semnatic>, form: "prose") finds that these bad habits persist up till into students’ 4th year of a BS degree. The tendency to skip learning these established practices can create significant problems for beginners down the line. By neglecting to adhere to coding standards and conventions, beginners risk developing poor coding habits that can impact the readability, maintainability, and scalability of their code @marko_benefits.
+The initial stages of learning to program are often focused on core functionalities and building working programs; coding standards frequently get sidelined. Understandably, new programmers are eager to understand the basic functions of languages and to develop programs that work, often neglecting to apply coding conventions during their development workflow. According to research conducted by #cite(<joni_discourse>, form: "prose"), 90% of students used the wrong coding standards in programming exercises, and #cite(<temp_semnatic>, form: "prose") finds that these bad habits persist up till into students’ 4th year of a BS degree. The tendency to skip learning these established practices can create significant problems for beginners down the line. By neglecting to adhere to coding standards and conventions, beginners risk developing poor coding habits that can impact the readability, maintainability, and scalability of their code @marko_benefits.
 
 \
 
-The effects of poor code quality don't stop at developers themselves. It adversely affects the software industry as a whole by introducing a concept known as technical debt @han_rem. Technical debt is a metaphor that refers to the hidden costs of neglecting good coding practices. Just like financial debt accrues interest over time, poorly written code accumulates complexity and becomes harder to understand and modify as the project grows @digkas_td.  This leads to several problems such as e.g, higher costs as bug fixes and new features become cumbersome, and an increased risk of software failure due to vulnerabilities.
+The effects of poor code quality don't stop at the developers themselves. It adversely affects the software industry as a whole by introducing a concept known as technical debt @han_rem. Technical debt is a metaphor that refers to the hidden costs of neglecting good coding practices. Just as financial debt accrues interest over time, poorly written code accumulates complexity and becomes harder to understand and modify as the project grows @digkas_td.  Poor code quality leads to problems such as higher costs as bug fixes and new features become cumbersome and an increased risk of software failure due to vulnerabilities.
 
 \
 
-Although existing code review platforms offer insights into basic coding style issues, there's an opportunity to enhance their capabilities for beginners, particularly by addressing the gap in feedback on the "why" behind conventions (Wessel et. al., #cite(<wessel_github>, form:"year")).  Understanding the rationale is crucial for preventing bad habits and tangled code that create future maintenance and collaboration challenges. This highlights the need for better integration of coding conventions into the learning process. This study aims to address this need by developing an intelligent code-reviewing tool with a tutoring focus. A novel approach that has the potential to significantly improve the overall quality of code produced in our industry.
+Although existing code review platforms offer insights into basic coding style issues, there's an opportunity to enhance their capabilities for beginners, particularly by addressing the gap in feedback on the "why" behind conventions (Wessel et al., #cite(<wessel_github>, form: "year")).  Understanding the rationale is crucial for preventing bad habits and tangled codes that create future maintenance and collaboration challenges. This highlights the need to integrate coding conventions into the learning process better. This study addresses this need by developing an intelligent code-reviewing tool with a tutoring focus. A novel approach that has the potential to significantly improve the overall quality of code produced in our industry.
 
 ])
 
-#set enum(numbering: "i.")
-
 #par([
     \
-    == AIM AND OBJECTIVES
+    == Aim and Objectives
 
     \
 
-    The aim of this study is to develop an intelligent code reviewing tool designed with a tutoring focus to empower beginner programmers in understanding and applying coding coventions using Natural Language Processing techniques and static code analysis. The objectives of this study are:
+    The aim of this study is to develop an intelligent code-reviewing tool designed with a tutoring focus to empower beginner programmers in understanding and applying coding conventions using Natural Language Processing techniques and static code analysis. The objectives of this study are:
 
     \
 
-    + To identify the specific challenges faced by beginner programmers in learning programming conventions.
+    + To identify the specific challenges beginner programmers face in learning programming conventions.
     + To gather and process the coding styles and general standards data for the static code analyzer to identify potential style violations based on those datasets.
     + To design and develop the intelligent explanation module and the interactive guidance features of the code reviewing tool.
-    + To design the user interface and user experience of the intelligent code review tool.
+    + To design the user interface (UI) and user experience (UX) of the intelligent code review tool.
     + To implement a working prototype of the intelligent code review tool.
 ])
 
 #par([
     \
-    == METHODOLOGY
+    == Methodology
     
     \
 
-    + Review of existing literature on programming education and analyzing and observation of existing systems.
-    + Acquiring sufficient datasets from coding standards documents or open-source code repositories and processing them using data processing tools such as Python libraries (Pandas, Natural Language Toolkit (NLTK) or Spacy). 
-    + Modelling and designing the components of the intelligent code review tool using UML diagrams such as an activitiy diagram, sequence diagram, use case diagram etc. as well as system architecture diagrams. 
-    + Designing the user interface and user experince of the tool using the design tool Figma. 
-    + Implementation of a working protoype of the tool using the React framework for the frontend, Rust for the static analyzer component and for the backend and transfer learning with Dolphin Model based on Mixtral @hartford_dolphin for the explanation module.
-
-    \
+    + Review existing literature on programming conventions and analyze and observe existing systems.
+    + Acquiring sufficient datasets from coding standards documents or open-source code repositories and processing them using data processing tools such as Python libraries (Pandas, Natural Language Toolkit (NLTK), or Spacy). 
+    + Modelling and designing the intelligent code review tool components using UML diagrams such as an activity diagram, sequence diagram, use case diagram, etc., and system architecture diagrams. 
+    + Designing the user interface (UI) and user experience (UX) of the tool using the design tool Figma. 
+    + Implementation of a working prototype of the tool using the React framework for the frontend, Rust for the static analyzer component, and for the backend and transfer learning with the Dolphin Model based on Mixtral @hartford_dolphin for the explanation module.
 ])
 
-#set enum(numbering: "1.")
+#pagebreak(weak: true)
 
-#set par(
-    justify: true,
-    leading: 1em,
-)
-
-#show figure.where(
-    kind: table
-): set figure.caption(position: top)
-
-#show figure.where(
-    kind: table
-): set block(breakable: true)
-
-#figure(
-table( 
-    columns: (.2fr, 1fr, 1fr),
-    inset: 10pt,
-    align: (center, left, left),
-    table.header[*S/N*][*OBJECTIVES*][*METHODOLOGY*], 
-    $1$, 
-    [ 
-    To identify the specific challenges faced by beginner programmers in learning programming conventions.
-    ], 
-    [*Extensive Literature Review and Existing Systems*
+#table-figure(
+    "Objectives-Methodology Mapping Table",
+    table(
+        columns: (.3fr, 1fr, 1fr),
+        inset: 10pt,
+        align: (center, left, left),
+        table.header[*S/N*][*OBJECTIVES*][*METHODOLOGY*], 
+        $1$, 
+        [ 
+        To identify the specific challenges faced by beginner programmers in learning programming conventions.
+        ], 
+        [*Extensive Literature Review and Existing Systems*
+            \ 
+            + Review existing literature on programming conventions 
+            + Analyze and observe existing systems.
+        ], 
+        $2$, 
+        [ 
+            To gather and process the coding styles and general standards data for the static code analyzer to identify potential style violations based on those datasets.
+        ], 
+        [*Data Gathering and Processing*
         \ 
-        + Review of existing literature on programming education
-        + Direct analysis and observation of existing systems.
-    ], 
-    $2$, 
-    [ 
-        To gather and process the coding styles and general standards data for the static code analyzer to identify potential style violations based on those datasets.
-    ], 
-    [*Data Gathering and Processing*
-    \ 
-    + Acquiring sufficient datasets from coding standards documents or open-source code repositories
-    + Processing the data using data processing tools such as Python libraries (Pandas, Natural Language Toolkit (NLTK) or Spacy).
-    ], 
-    $3$, 
-    [ 
-        To design and develop the intelligent explanation module and the interactive guidance features of the code reviewing tool.
-    ],
-    [
-        *Design and Development of Components*
-        \
-    Modelling and designing the components of the intelligent code review tool using UML diagrams such as an activitiy diagram, sequence diagram, use case diagram etc. as well as system architecture diagrams.
-    ],
-    $4$, 
-    [ 
-        To design and develop the intelligent explanation module and the interactive guidance features of the code reviewing tool.
-    ],
-    [
-        *Design and Development of Components*
-        \
-    Modelling and designing the components of the intelligent code review tool using UML diagrams such as an activitiy diagram, sequence diagram, use case diagram etc. as well as system architecture diagrams.
-    ],
-    $5$, 
-    [ 
-        To implement a working prototype of the intelligent code review tool.
-    ],
-    [
-        *Implementation of a working Prototype*
-        \
-    Implementation of a working protoype of the tool using the React framework for the frontend, Rust for the static analyzer component and for the backend and transfer learning with Dolphin Model based on Mixtral @hartford_dolphin for the explanation module.
-    ]
-),
-caption: [Objectives-Methodology Mapping Table]
-)
-
-#set par(
-    justify: true,
-    leading: 1.5em,
+        + Acquiring sufficient datasets from coding standards documents or open-source code repositories.
+        + Processing data using data processing tools such as Python libraries (Pandas, Natural Language Toolkit (NLTK), or Spacy). 
+        ], 
+        $3$, 
+        [ 
+            To design and develop the intelligent explanation module and the interactive guidance features of the code reviewing tool.
+        ],
+        [
+            *Design and Development of Components*
+            \
+        Modelling and designing the intelligent code review tool components using UML diagrams such as an activity diagram, sequence diagram, use case diagram, etc., and system architecture diagrams.
+        ],
+        $4$, 
+        [ 
+            To design the user interface (UI) and user experience (UX) of the intelligent code review tool.
+        ],
+        [
+            *UI/UX Design of Components*
+            \
+        Designing the user interface (UI) and user experience (UX) of the tool using the design tool Figma. 
+        ],
+        $5$, 
+        [ 
+            To implement a working prototype of the intelligent code review tool.
+        ],
+        [
+            *Implementation of a working Prototype*
+            \
+        Implementation of a working prototype of the tool using the React framework for the frontend, Rust for the static analyzer component, and for the backend and transfer learning with the Dolphin Model based on Mixtral @hartford_dolphin for the explanation module.
+        ]
+    ),
 )
 
 #par([
     \
     \
-    == SIGNIFICANCE OF THE STUDY
+    == Significance of the Study
 
     \
 
-    This project proposes a novel intelligent code review tool that addresses the lack of beginner-friendly learning resources on coding conventions. By offering real-time feedback, explanations, and interactive guidance, this tool empowers beginners to write cleaner code from the outset, while also introducing a potentially revolutionary approach to developer education through open-source LLMs and interactive features.
+    This project proposes a novel intelligent code review tool that addresses the lack of beginner-friendly learning resources on coding conventions. By offering real-time feedback, explanations, and interactive guidance, this tool empowers beginners to write cleaner code from the outset while also introducing a potentially revolutionary approach to developer education through open-source LLMs and interactive features.
 
     \
 
@@ -177,7 +166,7 @@ caption: [Objectives-Methodology Mapping Table]
 
 #par([
     \
-    == SCOPE OF THE STUDY
+    == Scope of the Study
     \
 
     This project maintains a strict development focus to address the gap in learning resources concerning coding conventions for beginner programmers.  The intelligent code reviewing tool being developed will leverage existing open-source large language models trained on code to provide explanations and justifications.  The user interface will prioritize clarity and ease-of-use for beginners, incorporating interactive features like visual aids, tutorials, and code refactoring suggestions to solidify understanding.  
@@ -189,7 +178,7 @@ caption: [Objectives-Methodology Mapping Table]
 
 #par([
     \
-    == LIMITATIONS OF THE STUDY
+    == Limitations of the Study
     \
 
     The major limitations of this study include the following:
@@ -205,7 +194,7 @@ caption: [Objectives-Methodology Mapping Table]
 
 #par([
     \
-    == STRUCTURE OF THE RESEARCH
+    == Structure of the Research
 
     \
 
@@ -215,18 +204,18 @@ caption: [Objectives-Methodology Mapping Table]
 #pagebreak(weak: true)
 
 #par([
-    = CHAPTER TWO: LITERATURE REVIEW
+    = Literature Review
     \
-    == PREAMBLE
+    == Preamble
     \
 
-    The importance of coding conventions remains a hurdle for beginners in today's software development landscape, particularly when it comes to ensuring clean and well-formatted code. This literature review lays the groundwork for a solution: an intelligent code review system utilizing open-source, code-focused LLMs and static analysis. This literature begins with a review of programming conventions or coding standards, coding smells and code quality, code quality management, lack of programming conventions and it's effects. _not finished_
+    The importance of coding conventions remains a hurdle for beginners in today's software development landscape, particularly when it comes to ensuring clean and well-formatted code. This literature review lays the groundwork for a solution: an intelligent code review system utilizing open-source, code-focused LLMs and static analysis. This literature encompass the review of programming conventions or coding standards, coding smells and code quality, code quality management, lack of programming conventions and it's effects. //not finished
 ])
 
 #par([
     \
 
-    == REVIEW OF PROGRAMMING CONVENTIONS
+    == Review of Programming Conventions
     
     \
 
@@ -240,7 +229,7 @@ caption: [Objectives-Methodology Mapping Table]
 #par([
     \
 
-    === BRIEF HISTORY OF PROGRAMMING CONVENTIONS
+    === Brief History of Programming Conventions
 
     \
 
@@ -258,7 +247,7 @@ The shift to object-oriented languages like C++ and Java in the 1980s-2000s nece
 #par([
     \
 
-    === MAIN TYPES OF PROGRAMMING CONVENTIONS
+    === Main Types of Programming Conventions
 
     \
 
@@ -267,6 +256,22 @@ The shift to object-oriented languages like C++ and Java in the 1980s-2000s nece
     \
 
     In programming, naming conventions establish guidelines for naming variables, functions, classes, and other code elements. These conventions promote consistency, clarity, and readability throughout the codebase @herka_naming. Following them allows developers to readily grasp the purpose and role of different code elements. For instance, using descriptive names like `calculateTotalPrice` instead of cryptic abbreviations enhances code understandability and maintainability @pugh_2018.
+
+    #code-figure(
+        "Some naming conventions in python",
+        ```py
+        # Variable and function names in lowercase_with_underscores
+        total_count = 0
+        calculate_total()
+
+        # Class names in CapitalizedCamelCase
+        class UserAccount:
+            pass
+
+        # Constant names in ALL_CAPS
+        PI = 3.14159
+        ```
+    )
 
     \
 
@@ -280,7 +285,7 @@ The shift to object-oriented languages like C++ and Java in the 1980s-2000s nece
 #par([
     \
 
-    == REVIEW ON CODING SMELLS AND CODE QUALITY
+    == Review on Coding Smells and Code Quality
 
     \
 
@@ -302,7 +307,7 @@ In software development, code quality plays a pivotal role in determining the re
 #par([
     \
     
-    == REVIEW ON CODE QUALITY MANAGEMENT
+    == Review on Code Quality Management
 
     \
 
@@ -316,23 +321,25 @@ In software development, code quality plays a pivotal role in determining the re
 #par([
     \
 
-    === MODERN CODE REVIEW: A STREAMLINED APPROACH
+    === Modern Code Review: A Streamlined Approach
 
     \
 
-    However, the limitations of manual code review or peer review in today's fast-paced development environments are becoming increasingly apparent.  The sheer volume of code produced, coupled with time constraints, can make thorough code review a challenge (Sadowski et. al., #cite(<sadowski_mordern>, form: "year")). The immediate solution adopted today to this limitation is called Mordern Code Review (MCR). MCR is a lightweight approach to traditional code inspections or peer review (Badampudi et al., #cite(<bada_modern>, form: "year")). 
+    However, the limitations of manual code review or peer review in today's fast-paced development environments are becoming increasingly apparent.  The sheer volume of code produced, coupled with time constraints, can make thorough code review a challenge (Sadowski et. al., #cite(<sadowski_mordern>, form: "year")). The immediate solution adopted today to this limitation is called Mordern Code Review (MCR). MCR is a lightweight approach to traditional code inspections or peer review (Badampudi et al., #cite(<bada_modern>, form: "year")). During the process, one or more reviewers assess the code for errors, adherence to coding standards, test coverage, and more. These MCR tools automate many aspects of the review process, making it faster and more efficient compared to traditional peer review methods that rely solely on manual processes @yu_2024. For example, tools like GitHub #footnote[GitHub: https://github.com], GitLab #footnote[GitLab: https://about.gitlab.com/], and Bitbucket #footnote[Bitbucket: https://bitbucket.com/] provide features such as inline commenting, automated code formatting checks, and integration with Continuous Integration/Continuous Deployment (CI/CD) pipelines, streamlining the review process.
+
+
 
     \
 
     MCR's process as explained in the works by Badampudi et al., (#cite(<bada_modern>, form: "year")) follows a series of six main steps that integrate with version contol systems (e.g., Gerrit, Github and GitLab). The steps involved in this process include:
 
-    \
+\
 
 + In _Step 1_, the code author(s) or developers submit code or changes. Usually, version control systems like Gerrit and Github are used, the developer creates a pull request. 
 
-+ In _Step 2_, the project or code owner selects one or more reviewers, using heuristics, to review the new pull requests made by the code author(s). 
++ In _Step 2_, the project or code owner selects one or more reviewers, usually using heuristics, to review the new pull requests made by the code author(s). 
 
-+ In _Step 3_, the reviewer(s) are notified of their assignement. In 
++ In _Step 3_, the reviewer(s) are notified of their assignement. 
 
 + In _Step 4_, the reviewer(s) check the code for defects or suggest improvement. 
 
@@ -340,10 +347,8 @@ In software development, code quality plays a pivotal role in determining the re
 
 + In _Step 6_, the pull request or code change is rejected or sent back to the author(s) for refinement. If no further rework is required, the code change is merged into the codebase.
 
-    \
-
     #figure(
-        image("images/mcrSteps.png", width: 100%),
+        image("images/mcrSteps.png", width: 120%),
         caption: [
             Overview of steps in modern code reviews, adapted from (Badampudi et al., #cite(<bada_modern>, form: "year"))
         ],
@@ -353,7 +358,7 @@ In software development, code quality plays a pivotal role in determining the re
 #par([
     \
     
-    === INTELLIGENT CODE REVIEW TOOLS
+    === Intelligent Code Review Tools
 
     \
 
@@ -371,52 +376,276 @@ In software development, code quality plays a pivotal role in determining the re
 #par([
     \
 
-    === STATIC ANALYSIS
+    === Static Analysis
 
     \
 
+Static code analysis tools play a crucial role in software development by assisting developers in enhancing the quality of their code. These tools statically evaluate source code to identify bugs, security vulnerabilities, duplications, and code smells. As noted by #cite(<moller_2020>, form: "prose"), the practice of static analysis has also been instrumental in optimizing compilers since the 1960s and has since expanded to aid in software debugging and quality improvement @nik_2021. The adoption of static analysis tools has become increasingly prevalent in the industry, offering developers insights into code quality standards and potential defects @ilyas_2016.
+
+\
+
+There are various types of static analysis tools available, each specializing in different programming languages and types of defects. Some tools focus on general-purpose code analysis, while others are tailored for specific languages like C/C++, Java, or Python. These tools such as Cppcheck #footnote[Cppcheck: https://cppcheck.sourceforge.io/], FindBugs #footnote[FindBugs: https://findbugs.sourceforge.net/], and SonarQube #footnote[SonarQube: https://en.wikipedia.org/wiki/SonarQube], use predefined rules or patterns to identify issues and provide actionable insights to developers for improving code quality. Static analysis tools are continuously evolving to meet the changing needs of software development and to provide more comprehensive coverage in detecting defects and vulnerabilities within the codebase @nach_2019.
 
 ])
 
 #par([
     \
 
-    == REVIEW ON THE EFFECTS OF UNCLEAN CODE
+    == Review on the Effects of Unclean Code
+
+    \
+
+    "Unclean code" is a term used to describe source code that is difficult to maintain, evolve, and change, often due to poor software engineering practices @car_2017. This type of code is characterized by poor readability, lack of maintainability, and the presence of "code smells" - indicators of software design problems @gupta_2018. These code smells, like long and complex functions scattered throughout the codebase (highly diffused #footnote[scattered throughout the codebase, making them harder to identify and manage.]), can significantly increase the likelihood of errors being introduced during modifications (change-proneness) and faults remaining undetected (fault-proneness #footnote[increased likelihood of faults (errors) remaining undetected in the code.]) @palomba_2017. As a result, unclean code can lead to a vicious cycle of bugs, rework, and project delays, ultimately impacting software quality and project success.
+
+    \
+
+    While the importance of clean code in preventing resource loss has been well-established (Digkas et. al., #cite(<digkas_td>, form: "year")), unclean code remains a persistent challenge in real-world software development projects @chirvase_2021. Several factors contribute to this issue, including a lack of developer motivation, limited knowledge of clean code principles, and a general lack of awareness regarding the importance of code quality. Inappropriate code reuse practices, often fueled by time pressures and influenced by the ethical climate within a development team @sojer_2014, further exacerbate the problem.  To address this challenge, it's crucial to encourage developers to prioritize clean code practices and reassess their professional values in relation to their craft.
 ])
 
 #par([
     \
 
-    === TECHINICAL DEBT
+    === Technical Debt
+
+    \
+
+    Technical debt (TD) is a metaphor that represents the compromise between maintaining clean, well-structured code and rapid development @areti. It encompasses the design choices, development decisions, and coding practices that prioritize immediate convenience over long-term sustainability @perceptions_alb. While technical debt (TD) can offer short-term benefits, such as reducing time-to-market #footnote[Time-to-market refers to the entire period it takes to bring a product or service from its initial conception to being available for purchase by customers], it can ultimately harm the overall quality of software systems by introducing bugs, increasing complexity, and hindering future maintenance efforts @rios.
+
+    \
+
+    In managing technical debt, it is essential to consider various strategies for addressing prioritization, refactoring, and automation. Prioritizing between new features and debt repayment involves assessing the impact on software quality, business value, and risks @lenarduzzi_2021. Refactoring practices focus on restructuring code to improve readability, maintainability, and quality without altering external behavior. Continuous refactoring helps reduce technical debt and enhance long-term maintainability. Automated tools for code analysis, such as SonarQube and Findbugs, can help identify technical debt indicators like code smells, duplication, and complexity, aiding efficient debt detection and resolution.
 ])
 
 #par([
     \
 
-    == REVIEW OF RELEVANT CONCEPTS
+    == Review of Relevant Concepts
+    \
+    This section provides an in-depth explanation of the various concepts that hold significance in the context of this project. These concepts include:
+
+    \
+    // + artificial intelligence
+    // + transfer learning
+    // + LLMs
+    // + static analysis:
+    //     + parsing
+    //     + tokenization: lexical analysis
+    //     + syntactic analysis
+    //     + AST
+    === Artificial intelligence
+    \
+    Artificial intelligence (AI) is the ability of a machine or computer system to perform tasks that typically require human intelligence, such as logical reasoning, learning, and problem-solving (Morandín-Ahuerma 2022). It is based on machine learning algorithms and technologies, allowing machines to apply cognitive abilities and perform tasks autonomously or semi-autonomously (Morandín-Ahuerma 2022). 
+
+    \
+    AI can be categorized by its cognitive capacity and autonomy, with various degrees of each (Morandín-Ahuerma 2022). The field of AI encompasses a range of modules, including knowledge representation, problem-solving, and natural language processing (Tecuci 2012). It is designed to imitate human cognitive abilities and can handle complex problems in an intelligent and adaptive manner (Wu 1986).
+
+    === Transfer Learning
+    \
+    Transfer learning is a machine learning strategy that includes exploiting knowledge learnt from a task to improve performance on a separate but connected task. In other words, transfer learning entails applying pre-trained models or knowledge from one activity to improve learning in another.
+    
+    \
+    Transfer learning is often used in deep learning to improve a model's performance on a new task by applying knowledge learnt from a previously trained model. The pre-trained model can be trained on a huge dataset and utilized as a place to begin for a new, related task. The learnt parameters of the pre-trained model can be fine-tuned or updated with less data tailored to the current job, resulting in a model that can learn faster and with a greater degree of precision (Zhuang et al., 2021). 
+
+    \
+    Transfer learning can be described as a technique that is extremely useful in NLP tasks when there is a shortage of training data for a certain task. A pre-trained language model trained on a big corpus, for example, can be changed or fine-tuned to suit to a specific language-generation task using a comparatively smaller dataset. Researchers have also utilized transfer learning to improve performance on similar tasks, such as using a pre-trained sentiment analysis model to improve efficiency on a text classification task (Ruder, Peters, Swayadimpta, & Wolf, 2019).
 
     \
 
-    + artificial intelligence
-    + transfer learning
-    + LLMs
-    + static analysis:
-        + parsing
-        + tokenization: lexical analysis
-        + syntatic analysis
-        + AST
+    #figure(
+    image("images/tl.png", width: 80%),
+        caption: [Overview of transfer learning]
+)
+    
+    \
+    Nowadays, transfer learning is an effective strategy for increasing the efficiency and accuracy of machine learning models, especially when significant amounts of training data are unavailable for use.
+
+    \
+    === Language Learning models
+
+    \
+
+    Large Language Models (LLMs) have emerged as a revolutionary force in various domains, and software engineering is no exception. These powerful AI models, trained on massive text datasets, exhibit remarkable capabilities in processing and generating human-like language. 
+
+    \
+    LLMs are demonstrating potential in automating code generation. By analyzing large codebases and identifying patterns, they can assist developers by generating code snippets, completing repetitive tasks, and even suggesting potential implementations for functionalities. This can significantly boost developer productivity and reduce boilerplate code writing. Research by (Guu et al., 2021) showcases how LLMs like Codex can generate functional code with impressive accuracy, particularly for well-defined tasks.
+
+    \
+    In recent development, LLMs are proving valuable in enhancing code understanding. Their ability to analyze code structure and semantics allows them to extract insights and answer developer queries. This can be particularly beneficial for complex codebases or legacy systems where understanding existing code functionality can be challenging. For instance, (Xu et al., 2021) demonstrate how LLMs can be trained to summarize code functionalities and identify potential code smells, aiding developers in code comprehension and refactoring efforts.
+
+    \
+    Finally, LLMs hold promise for revolutionizing code review practices. By learning from human-written code reviews, they can assist developers by identifying potential issues like syntax errors, logical flaws, and adherence to coding standards. This can streamline the review process by highlighting areas requiring attention and suggesting potential fixes. Studies by (Liu et al., 2023) explore the potential of LLMs to generate code review comments, highlighting areas for improvement and providing relevant code documentation or examples. However, it's crucial to remember that LLMs are still under development, and human expertise remains essential for complex code analysis and decision-making.
+
+
+    === Parsing
+
+    \
+    Parsing is a fundamental concept in computer science, particularly in programming languages and natural language processing. It refers to the process of analyzing a string of symbols, according to a set of rules, to determine its structure and meaning. Imagine it as taking a jumbled sentence and rearranging the words to form a grammatically correct and understandable sentence.
+
+    \
+    Parsing, or syntax analysis, is a crucial aspect of computer science and linguistics, with applications in advanced compilers, computational linguistics, web browsers, and data compression programs (Grune, 2008). It involves the analysis of code to identify its structure and meaning, and is often used in programming exercises to reinforce concepts of parsing, regular and context-free grammars, and abstract syntax trees (Werner, 2003). In the context of on-the-fly syntax highlighting, Palma (2022) proposes a deep learning-based approach that can achieve near-perfect accuracy in predicting correct and incorrect language derivations, outperforming regular expression-based strategies. This approach is particularly useful in online collaborative tools for software developers, where code highlighting quality is often sacrificed for system responsiveness.
+
+    \
+
+    #figure(
+    image("images/parser.png", width: 100%),
+        caption: [A schema of a common parsing processes]
+    )
+
+    \
+    === Tokenization: Lexical Analysis
+
+    \
+Tokenization involves breaking down a stream of code into smaller, meaningful units called tokens. These tokens can be keywords (like `if`, `for`, or `while`), identifiers (user-defined names like variable or function names), operators (such as `+`, `-`, or `*`), or special symbols (like `;`, `(`, or `)`). The process is analogous to how we segment sentences into individual words. Just as spaces separate words in a sentence, specific delimiters in the code (like whitespace, punctuation, or operators) signal the boundaries between tokens in the code stream. 
+
+\
+The importance of tokenization in static analysis stems from its role in transforming raw code into a structured representation. This structured representation, often in the form of an abstract syntax tree (AST), allows for efficient analysis of the code's syntax, semantics, and potential issues. By identifying the individual tokens and their types, static analysis tools can understand the basic building blocks of the code and perform checks for errors, inefficiencies, or security vulnerabilities. Tokenization paves the way for further analysis phases, enabling static analysis tools to reason about the code's structure, data flow, and potential control flow paths.
+
+#figure(
+    image("images/token.png", width: 90%),
+        caption: [Tokenization and parsing overview.]
+    )
+
+\
+In conclusion, tokenization serves as the essential first step in the static analysis process. By segmenting code into meaningful units, it transforms raw code into a structured format suitable for further analysis. This structured representation empowers static analysis tools to identify and flag potential issues within the code, ultimately contributing to improved code quality, security, and maintainability.
+
+\
+=== Syntactic Analysis
+
+\
+Following the initial breakdown of code into tokens during tokenization, static analysis enters the stage of syntactic analysis. Here, the focus shifts from individual elements to understanding the overall structure and organization of the code. This analysis aims to verify if the code adheres to the grammatical rules, or syntax, of the programming language.
+
+\
+Syntactic analysis often employs a parser, a program specifically designed to analyze the sequence of tokens. The parser leverages a set of formal rules, typically defined by a context-free grammar, to determine if the arrangement of tokens is valid according to the language's syntax.  Imagine it as checking if a sentence follows the grammatical rules of a language, ensuring proper word order and clause structure. If the parser successfully processes the entire sequence of tokens without encountering any violations, the code is considered syntactically correct.
+
+\
+
+#figure(
+    image("images/ast.jpg", width: 100%),
+        caption: [A simplified abstract syntax tree (AST) @samoaa.]
+    )
+
+\  
+A crucial outcome of successful syntactic analysis is the generation of an Abstract Syntax Tree (AST). This AST serves as a tree-like representation of the code's structure, capturing the hierarchical relationships between different code elements. The AST essentially becomes a blueprint of the code, reflecting its organization and flow without including concrete details like variable names or specific values. This high-level representation proves invaluable for subsequent static analysis phases, enabling further checks for semantic errors, potential inefficiencies, or security vulnerabilities within the code's overall structure.
 
 ])
-
 
 #par([
     \
 
-    == REVIEW OF RELATED METHODS
+    == Review of Relevant Systems
+
+    \
+The review of relevant systems in this paper aims to explore various tools and approaches that have been developed to enhance code quality and improve the code review process. These systems include:
+
+
+    \
+    === A Tutoring System to Learn Code Refactoring @keuing_tutoring
+    \
+
+In the field of programming education, a significant focus has been placed on developing tutoring systems and assessment tools. These tools help students by identifying errors in their code and assigning grades. However, there is a gap in these existing systems – they do not adequately address aspects of code quality like style and maintainability. These qualities are crucial for professional software development, as poorly written code can be difficult to understand, maintain, and test. Novice programmers, in particular, often struggle with writing clean and maintainable code.
+
+\
+
+This paper describes a tutoring system designed to address this gap. The system provides students with exercises that begin with functionally correct code, but the code is poorly written. Students are tasked with improving this code by applying refactorings in a step-by-step manner. The system offers hints and feedback to guide students throughout this process. These hints are presented in a hierarchical structure, allowing students to explore different levels of detail for each issue they encounter.
+
+\
+
+One of the key strengths of this system is that it is specifically designed for novice programmers. The system utilizes terminology and phrasing that is easy for beginners to understand. Additionally, the guidance provided by the system is gradual. Students can request more specific hints or explore alternative suggestions based on their needs. The system also focuses on issues that are commonly faced by novice programmers. These issues are identified through research and through the input of experienced teachers. The feedback and hints provided by the system are based on the suggestions from these teachers.
+
+\
+
+#figure(
+    image("images/refacTut.png", width: 100%),
+        caption: [Web application for the tutoring system (Keuning et al., #cite(<keuing_tutoring>, form: "year"))]
+)
+
+\
+An evaluation of the system was conducted by comparing the system's feedback with suggestions from teachers on how to improve student code. The results showed a strong correlation between the suggestions offered by the system and those provided by the teachers. Additionally, a preliminary study with students indicated that the system's hints are helpful for solving refactoring exercises.
+
+\
+
+While this tutoring system offers a valuable approach, it has limitations compared to intelligent code review systems.  The tutoring system's effectiveness relies on a predefined set of exercises and rules, which may not cover the vast potential scenarios encountered in real-world coding. Additionally, the system requires manual effort from teachers to create model solutions for generating new rules.
+
+\
+
+Leveraging static analysis and LLMs offers several advantages over the tutoring system. First, LLM-based systems can continuously learn and adapt from vast code repositories,  identifying a broader range of issues and keeping pace with evolving coding practices. This scalability eliminates the need for a predefined set of exercises and manual rule creation by teachers in the tutoring system. Additionally, LLMs can analyze code for a wider range of quality concerns, including security vulnerabilities and performance bottlenecks, while also considering the code's context for more nuanced feedback. Overall, LLM-based code review offers a more scalable, adaptable, and comprehensive approach to improving code quality, potentially better preparing students for the complexities of real-world coding.
 ])
+
+\
+#table-figure(
+    "Code Quality Improvement Methods: Tutoring System vs. Intelligent Code Review",
+    table(
+        columns: (1fr, 1fr, 1fr),
+        inset: 10pt,
+        align: (left, left, left),
+        table.header[*Feature*][*Tutoring System*][*Intelligent Code Review*],
+        [*Methodology*],	[Predefined set of exercises and pre-defined rules],	[Machine learning on vast code repositories],
+        [*Adaptability*],	[Limited, requires manual effort for expansion],[Scalable, learns and adapts automatically],
+        [*Feedback Style*],	[Step-by-step guidance for prescribed refactorings],	[Nuanced feedback based on code context],
+        [*Knowledge Base*],	[Static set of teacher-defined rules],	[Continuously learns from code repositories],
+        [*Efficiency*], [Requires teacher effort to create model solutions],[Potentially learns from existing code examples],
+    )
+)
 
 #par([
     \
+    
+    // These people are brain-dead. bro! man started spewing algorithms talking about central neural networks, IM USING A FUCKING OPEN SOURCE LLM JEEZ, not building one
+    // > Dada is a tiny man inside and out, he has Napoleon syndrome
 
-    == REVIEW OF EXISTING SYSTEMS
+    === Codacy
+
+    \
+    While numerous SCA tools exist, Codacy offers a user-friendly and comprehensive solution specifically designed to streamline the code review process [3].
+
+\
+One of Codacy's key strengths lies in its ease of use.  The platform boasts a user-friendly interface that simplifies integration with popular development workflows and version control systems @codacy. This allows developers to seamlessly incorporate SCA into their existing development routine, minimizing disruption and promoting continuous code improvement.  Furthermore, Codacy offers analysis for a broad range of programming languages, making it a versatile tool for teams working on diverse projects @codacy.
+
+\
+While user-friendliness and versatility are valuable features, Codacy goes beyond basic functionalities. The platform leverages a powerful suite of static analysis engines, enabling it to detect a wide spectrum of code quality issues @codacy.  This includes identifying potential security vulnerabilities, adherence to coding best practices, and opportunities for code refactoring.  Additionally, Codacy provides developers with clear and actionable feedback, guiding them towards resolving identified issues and enhancing overall code quality @codacy.
+
+\
+#figure(
+    image("images/codacy.png", width: 100%),
+        caption: [Overview of issues in recent commits on Codacy Dashboard]
+)
+
+\
+While Codacy offers a user-friendly and comprehensive SCA solution, it has limitations compared to LLM-based intelligent code review tools. Codacy relies on a predefined set of rules and analysis engines, potentially missing emerging coding issues or remaining blind to certain coding styles. LLM-based tools, on the other hand, can continuously learn and adapt from vast code repositories, potentially identifying a broader range of code quality concerns and best practices that may not be explicitly encoded within Codacy's rule set.
+
+\
+\
+\
+\
+
+
+\
+#table-figure(
+    "Code Quality Improvement Methods: Codacy vs. Intelligent Code Review",
+    table(
+        columns: (1fr, 1fr, 1fr),
+        inset: 10pt,
+        align: (left, left, left),
+        table.header[*Feature*][*Tutoring System*][*Intelligent Code Review*],
+        [*Methodology*],	[Predefined set of exercises and pre-defined rules],	[Machine learning on vast code repositories],
+        [*Adaptability*],	[Limited, based on rule updates	],[Scalable, Continuous learning and adaptation],
+        [*Scope of Issues Detected*],	[Defined set of coding issues],	[Broader range of issues and best practices],
+        [*Knowledge Base*],	[Static set of analysis rules],
+        [Continuously learns from code examples],
+    )
+)
+])
+
+#par([
+
+    \
+    == Summary of Literature Review
+
+    \
+    This review of literature explored various approaches to improving code quality. A code review system utilizing static analysis and LLMs (Large Language Models) emerged as a more promising solution. LLM-based systems benefit from continuous learning capabilities, enabling them to identify a wider range of code quality issues and adapt to evolving coding practices. Additionally, they can analyze code for context-specific nuances, leading to more comprehensive feedback compared to a static set of rules. 
+
+    \
+    
+    Overall, LLM-based code review offers a more scalable, adaptable, and effective approach to improving code quality, particularly for preparing students for the demands of professional software development. The proposed approach will utilize transfer learning approach by fine-tuning the Dolphin Model @hartford_dolphin with a smaller conventions dataset.
+
 ])

@@ -18,7 +18,7 @@
 // make a figure of code and pretend it's an image
 #let code-figure(caption, code) = {
   figure(
-    block(fill: luma(240), width: 90%, inset: 10pt, code),
+    block(fill: luma(240), width: 90%, inset: 10pt, radius: 5pt, code),
     caption: caption,
     kind: image,
     supplement: "Figure",
@@ -44,17 +44,25 @@
   acknowledgements: none,
   reference-path: none,
   date: datetime.today(),
+  print: none,
   content,
 ) = {
-  set page(margin: (x: 2cm, y: 2cm))
+  set page(paper: "a4", margin: (top: 1in, bottom: 1in, left: 1.5in, right: 1in))
   set par(justify: true, leading: 0.75em)
   set heading(numbering: "1.")
   set text(font: "Times New Roman", 12pt)
-  set enum(numbering: "i.")
+  set enum(numbering: "i")
 
   set footnote.entry( // make footnotes have dots above
     separator: repeat[.],
   )
+
+  // make heading refs. say chapter
+  set ref(supplement: it => {
+    if it.func() == heading {
+      "Chapter"
+    }
+  })
 
   // make first row of table grey
   set table(fill: (_, y) => if y == 0 { luma(230) }, align: horizon)
@@ -71,9 +79,13 @@
   show heading.where(level: 2): set text(size: 13pt)
   show heading.where(level: 3): set text(size: 13pt)
 
-  // make links blue/underline
-  show link: underline
-  show link: set text(fill: blue)
+  // make links blue/underline unless printing
+  show link: it => if print == true {
+    it
+  } else {
+    set text(fill: blue)
+    underline(it)
+  }
 
   // fix for nbhyp
   show "-": sym.hyph.nobreak
@@ -85,11 +97,11 @@
   // table captions top
   show figure.where(kind: table): set figure.caption(position: top)
 
-  // make heading be smallcaps
+  // make heading be upper
   show heading.where(level: 1): it => [
     #set par(justify: false)
     #set align(center)
-    #smallcaps(it.body)
+    #upper(it.body)
     #linebreak()
     #linebreak()
   ]
@@ -204,25 +216,45 @@
   set page(numbering: "1")
   counter(page).update(1)
 
-  // make heading have "chapter x" on top and smallcaps
+  let conv(x) = {
+    if x == "1." {
+      "One"
+    } else if x == "2." {
+      "Two"
+    } else if x == "3." {
+      "Three"
+    } else if x == "4." {
+      "Four"
+    } else if x == "5." {
+      "Five"
+    }
+  }
+
+  // make heading have "chapter x" on top and upper
   show heading.where(level: 1): it => [
     #set par(justify: false)
     #set align(center)
-    #smallcaps("Chapter " + counter(heading).display())
+    #upper("Chapter " + conv(counter(heading).display()))
     #linebreak()
-    #smallcaps(it.body)
+    #upper(it.body)
     #linebreak()
     #linebreak()
   ]
 
+  //make all headings upper
+  show heading: it => [
+    #upper(it)
+  ]
+
+
   content
 
   // references
-  // make heading be smallcaps
+  // make heading be upper
   show heading.where(level: 1): it => [
     #set par(justify: false)
     #set align(center)
-    #smallcaps(it.body)
+    #upper(it.body)
     #linebreak()
     #linebreak()
   ]
