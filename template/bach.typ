@@ -50,7 +50,7 @@
   set page(paper: "a4", margin: (top: 1in, bottom: 1in, left: 1.5in, right: 1in))
   set par(justify: true, leading: 0.75em)
   set heading(numbering: "1.")
-  set text(font: "Times New Roman", 12pt)
+  set text(font: "New Computer Modern", 12pt, hyphenate: false,)
   set enum(numbering: "i")
 
   set footnote.entry( // make footnotes have dots above

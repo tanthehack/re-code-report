@@ -72,3 +72,14 @@ Here's how your intelligent code reviewing tool can leverage open-source LLMs to
 * **User Interface Design:**  Develop a user interface that clearly displays the code snippet, the identified violation, and the LLM's recommendations with explanations. This will enhance the learning experience for beginner programmers.
 
 By combining static code analysis and the power of open-source LLMs, your intelligent code reviewing tool can offer valuable insights and guidance, assisting beginner programmers in writing clean, maintainable, and well-formatted code. 
+
+
+
+## Corrections from Panel after Mini Defense
+1. Project Title: Remove coding conventions and make it centered on what the tool utilizes to solve the problem
+2. Remove footnotes from writeup
+3. Write more extensively on AI, CNN, ANN, and the supersets of LLMs. Write on Why LLMs were chosen for this problem.
+4. Write on relevant methods (ask dada what you should study up on)
+4. List the systems reviewed in the introduction of "Review of Relevant Systems".
+5. Centralize numbers on pages throughout the writeup.
+6. Reduce spaces between paragraphs and titles with other content.
