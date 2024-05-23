@@ -325,7 +325,7 @@ In software development, code quality plays a pivotal role in determining the re
 
     \
 
-    However, the limitations of manual code review or peer review in today's fast-paced development environments are becoming increasingly apparent.  The sheer volume of code produced, coupled with time constraints, can make thorough code review a challenge (Sadowski et. al., #cite(<sadowski_mordern>, form: "year")). The immediate solution adopted today to this limitation is called Mordern Code Review (MCR). MCR is a lightweight approach to traditional code inspections or peer review (Badampudi et al., #cite(<bada_modern>, form: "year")). During the process, one or more reviewers assess the code for errors, adherence to coding standards, test coverage, and more. These MCR tools automate many aspects of the review process, making it faster and more efficient compared to traditional peer review methods that rely solely on manual processes @yu_2024. For example, tools like GitHub #footnote[GitHub: https://github.com], GitLab #footnote[GitLab: https://about.gitlab.com/], and Bitbucket #footnote[Bitbucket: https://bitbucket.com/] provide features such as inline commenting, automated code formatting checks, and integration with Continuous Integration/Continuous Deployment (CI/CD) pipelines, streamlining the review process.
+    However, the limitations of manual code review or peer review in today's fast-paced development environments are becoming increasingly apparent.  The sheer volume of code produced, coupled with time constraints, can make thorough code review a challenge (Sadowski et. al., #cite(<sadowski_mordern>, form: "year")). The immediate solution adopted today to this limitation is called Mordern Code Review (MCR). MCR is a lightweight approach to traditional code inspections or peer review (Badampudi et al., #cite(<bada_modern>, form: "year")). During the process, one or more reviewers assess the code for errors, adherence to coding standards, test coverage, and more. These MCR tools automate many aspects of the review process, making it faster and more efficient compared to traditional peer review methods that rely solely on manual processes @yu_2024. For example, tools like GitHub, GitLab, and provide features such as inline commenting, automated code formatting checks, and integration with Continuous Integration/Continuous Deployment (CI/CD) pipelines, streamlining the review process.
 
 
 
@@ -384,7 +384,7 @@ Static code analysis tools play a crucial role in software development by assist
 
 \
 
-There are various types of static analysis tools available, each specializing in different programming languages and types of defects. Some tools focus on general-purpose code analysis, while others are tailored for specific languages like C/C++, Java, or Python. These tools such as Cppcheck #footnote[Cppcheck: https://cppcheck.sourceforge.io/], FindBugs #footnote[FindBugs: https://findbugs.sourceforge.net/], and SonarQube #footnote[SonarQube: https://en.wikipedia.org/wiki/SonarQube], use predefined rules or patterns to identify issues and provide actionable insights to developers for improving code quality. Static analysis tools are continuously evolving to meet the changing needs of software development and to provide more comprehensive coverage in detecting defects and vulnerabilities within the codebase @nach_2019.
+There are various types of static analysis tools available, each specializing in different programming languages and types of defects. Some tools focus on general-purpose code analysis, while others are tailored for specific languages like C/C++, Java, or Python. These tools such as Cppcheck, FindBugs, and SonarQube, use predefined rules or patterns to identify issues and provide actionable insights to developers for improving code quality. Static analysis tools are continuously evolving to meet the changing needs of software development and to provide more comprehensive coverage in detecting defects and vulnerabilities within the codebase @nach_2019.
 
 ])
 
@@ -395,7 +395,7 @@ There are various types of static analysis tools available, each specializing in
 
     \
 
-    "Unclean code" is a term used to describe source code that is difficult to maintain, evolve, and change, often due to poor software engineering practices @car_2017. This type of code is characterized by poor readability, lack of maintainability, and the presence of "code smells" - indicators of software design problems @gupta_2018. These code smells, like long and complex functions scattered throughout the codebase (highly diffused #footnote[scattered throughout the codebase, making them harder to identify and manage.]), can significantly increase the likelihood of errors being introduced during modifications (change-proneness) and faults remaining undetected (fault-proneness #footnote[increased likelihood of faults (errors) remaining undetected in the code.]) @palomba_2017. As a result, unclean code can lead to a vicious cycle of bugs, rework, and project delays, ultimately impacting software quality and project success.
+    "Unclean code" is a term used to describe source code that is difficult to maintain, evolve, and change, often due to poor software engineering practices @car_2017. This type of code is characterized by poor readability, lack of maintainability, and the presence of "code smells" - indicators of software design problems @gupta_2018. These code smells, like long and complex functions scattered throughout the codebase (making them harder to identify and manage) can significantly increase the likelihood of errors being introduced during modifications, change-proneness, and faults remaining undetected, fault-proneness @palomba_2017. As a result, unclean code can lead to a vicious cycle of bugs, rework, and project delays, ultimately impacting software quality and project success.
 
     \
 
@@ -649,3 +649,57 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
     Overall, LLM-based code review offers a more scalable, adaptable, and effective approach to improving code quality, particularly for preparing students for the demands of professional software development. The proposed approach will utilize transfer learning approach by fine-tuning the Dolphin Model @hartford_dolphin with a smaller conventions dataset.
 
 ])
+
+#par([
+    = System Analysis and Design
+
+    == Preamble
+    \
+    This section details the analysis and design of the proposed system. It presents the requirements for the system, the techniques taken to achieve the system as well as diagrams to model the proposed system.
+
+    \
+])
+
+#par([
+    == The proposed system
+    \ 
+    This proposed project will be a web-based application. It will allow users to connect their codebases through code hosting repositories like GitHub or allow users to import their code into the application. The application then provides an extensive review of the code, highlighting areas that need improvement, and giving recommendations on how to improve the code. The system will also provide explanations and justifications for the suggestions made using intelligent responses from a language model.
+    
+    \
+])
+
+#par([
+    == Requirements Analysis
+    \
+    In software development, requirement analysis includes the descriptions of the services that would be provided by the system, as well as its operational limits. It lays down the features that are required to suit the users’ requirements, these requirements are then further separated into functional and non-functional requirements. The various requirements for the proposed system are detailed in this section.
+
+    \
+    === Functional Requirements
+    \
+    Functional requirements of the system are specific functionalities or services that the system is expected to perform. They describe what the application should do and include operations, activities, computational tasks, data manipulation, user interface behavior, and more. These requirements are as follows:
+
+    + Users should be able to input their code or to link their respective codebases from code hosting sites.
+    + Users whould be allowed to select the coding conventions they want to adhere to.
+    + The system should analyze the code and provide feedback on areas that need improvement.
+    + The system should generate appropriate and contextually relevant explanations and justifications based on the content of the code and the suggestions made.
+    + The system should allow users to view the code and the suggestions side by side.
+    + The system should allow users to accept or reject the suggestions made.
+    + The system should provide a summary of the code review.
+    + The system should allow users to download the reviewed code.
+
+    \
+    === Non-Functional Requirements
+    \
+    Non-functional requirements are not directly related to the system functionality but rather are defined in terms of system performance. They explain the systems behaviour, features and overall attributes that can affect the users experience.
+    The non-functional requirements for the system in this study are as follows:
+
+    + The system should be user-friendly and easy to navigate.
+    + The sytem should seamlessly engage with code hosting repositories like GitHub for easy retrival and pushing of code.
+    + The system should provide feedback within a reasonable time frame.
+    // + The system should be able to handle large codebases.
+    // + The system should be secure and protect user data.
+    // + The system should be scalable and able to adapt to new coding conventions.
+    + The system should be able to provide explanations and justifications that are contextually relevant to the submitted code.
+    + The system should be able to provide a summary of the code review.
+])
+
