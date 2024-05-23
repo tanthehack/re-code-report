@@ -149,7 +149,7 @@
   )
 
   pagebreak(weak: true)
-  set page(numbering: "i.", number-align: right)
+  set page(numbering: "i.", number-align: center)
   counter(page).update(1)
 
   // certification
