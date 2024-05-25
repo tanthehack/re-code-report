@@ -1,0 +1,162 @@
+<mxfile host="app.diagrams.net" modified="2024-05-25T17:00:39.408Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="YE1WX9tz_Gj-XyBRcnc5" version="24.4.8" type="device">
+  <diagram name="Page-1" id="2YBvvXClWsGukQMizWep">
+    <mxGraphModel dx="983" dy="684" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-1" value="User" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};rounded=1;" parent="1" vertex="1">
+          <mxGeometry x="880" y="190" width="100" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-2" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};rounded=1;" parent="aM9ryv3xv72pqoxQDRHE-1" vertex="1">
+          <mxGeometry x="42.5" y="70" width="15" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-5" value="Intelligent Code Review System" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};rounded=1;glass=0;shadow=0;" parent="1" vertex="1">
+          <mxGeometry x="1080" y="190" width="110" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-3" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};rounded=1;" vertex="1" parent="aM9ryv3xv72pqoxQDRHE-5">
+          <mxGeometry x="47.5" y="70" width="15" height="480" as="geometry" />
+        </mxCell>
+        <mxCell id="aM9ryv3xv72pqoxQDRHE-7" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Choose method to import code&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" parent="1" source="aM9ryv3xv72pqoxQDRHE-2" target="B8G3pju3arrvhrQtFYce-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1035" y="280" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1020" y="270" />
+            </Array>
+            <mxPoint x="1100" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-4" value="Github API" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=0;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};rounded=1;glass=0;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="1275" y="190" width="110" height="590" as="geometry" />
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-5" value="" style="html=1;points=[];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};rounded=1;" vertex="1" parent="B8G3pju3arrvhrQtFYce-4">
+          <mxGeometry x="47.5" y="70" width="15" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-7" value="Alternative" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=1;collapsible=0;width=170;" vertex="1" parent="1">
+          <mxGeometry x="720" y="320" width="710" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-8" value="[If import from Github chosen]" style="text;html=1;" vertex="1" parent="B8G3pju3arrvhrQtFYce-7">
+          <mxGeometry width="100" height="20" relative="1" as="geometry">
+            <mxPoint x="20" y="40" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-9" value="[Else]" style="line;strokeWidth=1;dashed=1;labelPosition=center;verticalLabelPosition=bottom;align=left;verticalAlign=top;spacingLeft=20;spacingTop=15;html=1;whiteSpace=wrap;dashPattern=12 12;" vertex="1" parent="B8G3pju3arrvhrQtFYce-7">
+          <mxGeometry y="102" width="710" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-12" value="" style="group" vertex="1" connectable="0" parent="B8G3pju3arrvhrQtFYce-7">
+          <mxGeometry x="210" y="52" width="200" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-10" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="B8G3pju3arrvhrQtFYce-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="197.5" y="11" as="sourcePoint" />
+            <mxPoint x="7.5" y="11" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-11" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Display avaliable code repositories&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="B8G3pju3arrvhrQtFYce-12">
+          <mxGeometry y="-2" width="200" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-15" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Connect to Github API for authentication&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="B8G3pju3arrvhrQtFYce-7">
+          <mxGeometry x="410" y="7" width="200" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-14" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="B8G3pju3arrvhrQtFYce-7" target="B8G3pju3arrvhrQtFYce-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="422.5" y="21" as="sourcePoint" />
+            <mxPoint x="587.5" y="21" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-22" value="&lt;p style=&quot;line-height: 70%;&quot;&gt;&lt;font style=&quot;font-size: 9px;&quot;&gt;Sends available code repositories from account&lt;/font&gt;&lt;/p&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="B8G3pju3arrvhrQtFYce-7">
+          <mxGeometry x="455" y="48" width="110" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-23" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="B8G3pju3arrvhrQtFYce-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="603" y="42" as="sourcePoint" />
+            <mxPoint x="422.5" y="42" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-24" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Select code repository&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="B8G3pju3arrvhrQtFYce-7">
+          <mxGeometry x="210" y="82.62" width="200" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-26" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Manually import code&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="B8G3pju3arrvhrQtFYce-7">
+          <mxGeometry x="210" y="130" width="200" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-27" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="B8G3pju3arrvhrQtFYce-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="217.5" y="143.38000000000005" as="sourcePoint" />
+            <mxPoint x="407.5" y="143.38000000000005" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-25" value="" style="endArrow=classic;html=1;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="937.5" y="402.00000000000006" as="sourcePoint" />
+            <mxPoint x="1127.5" y="402.00000000000006" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-30" value="&lt;font size=&quot;1&quot;&gt;Method selected&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1127" y="300" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1019" y="300" />
+            </Array>
+            <mxPoint x="937" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-28" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Display recommendations and report&lt;br&gt;from code review&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;dashed=1;" edge="1" parent="1" source="B8G3pju3arrvhrQtFYce-3" target="aM9ryv3xv72pqoxQDRHE-2">
+          <mxGeometry x="0.0279" y="30" relative="1" as="geometry">
+            <mxPoint x="1120" y="520" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1022" y="520" />
+            </Array>
+            <mxPoint x="940" y="520" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-32" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Select recommendation&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="938" y="574" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1020" y="574" />
+            </Array>
+            <mxPoint x="1128" y="574" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-33" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Display recommendation&lt;br&gt;&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry x="0.0211" y="20" relative="1" as="geometry">
+            <mxPoint x="1127" y="601" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1021" y="601" />
+            </Array>
+            <mxPoint x="937" y="601" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-34" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Accept or reject recommendation&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="938" y="654" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1020" y="654" />
+            </Array>
+            <mxPoint x="1128" y="654" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-35" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Select download reviewed code&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="937" y="693" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1019" y="693" />
+            </Array>
+            <mxPoint x="1127" y="693" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="B8G3pju3arrvhrQtFYce-36" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Display download response&lt;br&gt;&lt;/font&gt;" style="html=1;verticalAlign=bottom;endArrow=block;edgeStyle=elbowEdgeStyle;elbow=horizontal;curved=0;rounded=0;dashed=1;" edge="1" parent="1">
+          <mxGeometry x="0.0211" y="20" relative="1" as="geometry">
+            <mxPoint x="1127" y="720" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="1021" y="720" />
+            </Array>
+            <mxPoint x="937" y="720" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

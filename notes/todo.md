@@ -8,3 +8,5 @@
 - [ ] Centralize numbers on pages throughout the witeup
 - [ ] Reduce spacing between paragraphs and titles with other content
 - [ ] Emphasize the scientific aspects of the topic.
+- [ ] In the explanations of programming conventions, change the examples to more complex code smells or programming convents in javascript
+- [ ] Change the program of the project to javascript

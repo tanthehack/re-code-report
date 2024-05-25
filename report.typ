@@ -7,13 +7,13 @@
     supervisor: "Dr. Itunuoluwa Isewon",
     reference-path: "../references.bib",
     dedication: [I dedicate this work to God, who has been my very present help in times of need during my 4-year journey in this institution. I also dedicate this work to my friends and family, who support me.],
-    acknowledgements: [My most profound gratitude goes to Almighty God, who has kept me and sustained me right from the very start of my degree up until this point. To Him be all the glory.
+    acknowledgments: [My most profound gratitude goes to Almighty God, who has kept me and sustained me right from the very start of my degree up until this point. To Him be all the glory.
     
     \
-I want to express my sincere gratitude to my younger sister, Daniella Ekekwe, who continues to encourage me to follow my passion in computer science, especially during the course of this project.
+I want to express my sincere gratitude to my younger sister, Daniella Ekekwe, who continues to encourage me to follow my passion for computer science, especially during this project.
 
 \
-I am extremely grateful to my parents, Mr and Mrs Ekekwe for their sacrifices, contributions, and prayers towards the completion of this degree.I am extremely privileged to have them in my life.
+I am extremely grateful to my parents, Mr and Mrs Ekekwe for their sacrifices, contributions, and prayers towards the completion of this degree. I am extremely privileged to have them in my life.
 
 \
 My sincere gratitude also goes to my hardworking supervisor, Dr Itunuoluwa Isewon, who provided her support even when she was on a work break. Thank you for your excellent supervision and guidance ma.],
@@ -409,7 +409,7 @@ There are various types of static analysis tools available, each specializing in
 
     \
 
-    Technical debt (TD) is a metaphor that represents the compromise between maintaining clean, well-structured code and rapid development @areti. It encompasses the design choices, development decisions, and coding practices that prioritize immediate convenience over long-term sustainability @perceptions_alb. While technical debt (TD) can offer short-term benefits, such as reducing time-to-market #footnote[Time-to-market refers to the entire period it takes to bring a product or service from its initial conception to being available for purchase by customers], it can ultimately harm the overall quality of software systems by introducing bugs, increasing complexity, and hindering future maintenance efforts @rios.
+    Technical debt (TD) is a metaphor that represents the compromise between maintaining clean, well-structured code and rapid development @areti. It encompasses the design choices, development decisions, and coding practices that prioritize immediate convenience over long-term sustainability @perceptions_alb. While technical debt (TD) can offer short-term benefits, such as reducing time-to-market, it can ultimately harm the overall quality of software systems by introducing bugs, increasing complexity, and hindering future maintenance efforts @rios.
 
     \
 
@@ -439,12 +439,13 @@ There are various types of static analysis tools available, each specializing in
     \
     AI can be categorized by its cognitive capacity and autonomy, with various degrees of each (Morandín-Ahuerma 2022). The field of AI encompasses a range of modules, including knowledge representation, problem-solving, and natural language processing (Tecuci 2012). It is designed to imitate human cognitive abilities and can handle complex problems in an intelligent and adaptive manner (Wu 1986).
 
+    \
     === Transfer Learning
     \
     Transfer learning is a machine learning strategy that includes exploiting knowledge learnt from a task to improve performance on a separate but connected task. In other words, transfer learning entails applying pre-trained models or knowledge from one activity to improve learning in another.
     
     \
-    Transfer learning is often used in deep learning to improve a model's performance on a new task by applying knowledge learnt from a previously trained model. The pre-trained model can be trained on a huge dataset and utilized as a place to begin for a new, related task. The learnt parameters of the pre-trained model can be fine-tuned or updated with less data tailored to the current job, resulting in a model that can learn faster and with a greater degree of precision (Zhuang et al., 2021). 
+    Transfer learning is often used in deep learning to improve a model's performance on a new task by applying knowledge learnt from a previously trained model. The pre-trained model can be trained on a huge dataset and utilized as a place to begin for a new, related task. The learnt parameters of the pre-trained model can be fine-tuned or updated with less data tailored to the current job, resulting in a model that can learn faster and with a greater degree of precision (Zhuang et al., 2021)//fake reference. 
 
     \
     Transfer learning can be described as a technique that is extremely useful in NLP tasks when there is a shortage of training data for a certain task. A pre-trained language model trained on a big corpus, for example, can be changed or fine-tuned to suit to a specific language-generation task using a comparatively smaller dataset. Researchers have also utilized transfer learning to improve performance on similar tasks, such as using a pre-trained sentiment analysis model to improve efficiency on a text classification task (Ruder, Peters, Swayadimpta, & Wolf, 2019).
@@ -470,7 +471,7 @@ There are various types of static analysis tools available, each specializing in
     LLMs are demonstrating potential in automating code generation. By analyzing large codebases and identifying patterns, they can assist developers by generating code snippets, completing repetitive tasks, and even suggesting potential implementations for functionalities. This can significantly boost developer productivity and reduce boilerplate code writing. Research by (Guu et al., 2021) showcases how LLMs like Codex can generate functional code with impressive accuracy, particularly for well-defined tasks.
 
     \
-    In recent development, LLMs are proving valuable in enhancing code understanding. Their ability to analyze code structure and semantics allows them to extract insights and answer developer queries. This can be particularly beneficial for complex codebases or legacy systems where understanding existing code functionality can be challenging. For instance, (Xu et al., 2021) demonstrate how LLMs can be trained to summarize code functionalities and identify potential code smells, aiding developers in code comprehension and refactoring efforts.
+    In recent developments, LLMs have proved valuable in enhancing code understanding. Their ability to analyze code structure and semantics allows them to extract insights and answer developer queries. This can be particularly beneficial for complex codebases or legacy systems where understanding existing code functionality can be challenging. For instance, (Xu et al., 2021) demonstrate how LLMs can be trained to summarize code functionalities and identify potential code smells, aiding developers in code comprehension and refactoring efforts.
 
     \
     Finally, LLMs hold promise for revolutionizing code review practices. By learning from human-written code reviews, they can assist developers by identifying potential issues like syntax errors, logical flaws, and adherence to coding standards. This can streamline the review process by highlighting areas requiring attention and suggesting potential fixes. Studies by (Liu et al., 2023) explore the potential of LLMs to generate code review comments, highlighting areas for improvement and providing relevant code documentation or examples. However, it's crucial to remember that LLMs are still under development, and human expertise remains essential for complex code analysis and decision-making.
@@ -482,7 +483,7 @@ There are various types of static analysis tools available, each specializing in
     Parsing is a fundamental concept in computer science, particularly in programming languages and natural language processing. It refers to the process of analyzing a string of symbols, according to a set of rules, to determine its structure and meaning. Imagine it as taking a jumbled sentence and rearranging the words to form a grammatically correct and understandable sentence.
 
     \
-    Parsing, or syntax analysis, is a crucial aspect of computer science and linguistics, with applications in advanced compilers, computational linguistics, web browsers, and data compression programs (Grune, 2008). It involves the analysis of code to identify its structure and meaning, and is often used in programming exercises to reinforce concepts of parsing, regular and context-free grammars, and abstract syntax trees (Werner, 2003). In the context of on-the-fly syntax highlighting, Palma (2022) proposes a deep learning-based approach that can achieve near-perfect accuracy in predicting correct and incorrect language derivations, outperforming regular expression-based strategies. This approach is particularly useful in online collaborative tools for software developers, where code highlighting quality is often sacrificed for system responsiveness.
+    Parsing, or syntax analysis, is a crucial aspect of computer science and linguistics, with applications in advanced compilers, computational linguistics, web browsers, and data compression programs (Grune, 2008). It involves the analysis of code to identify its structure and meaning and is often used in programming exercises to reinforce concepts of parsing, regular and context-free grammar, and abstract syntax trees (Werner, 2003). In the context of on-the-fly syntax highlighting, Palma (2022) proposes a deep learning-based approach that can achieve near-perfect accuracy in predicting correct and incorrect language derivations, outperforming regular expression-based strategies. This approach is particularly useful in online collaborative tools for software developers, where code highlighting quality is often sacrificed for system responsiveness.
 
     \
 
@@ -496,7 +497,7 @@ There are various types of static analysis tools available, each specializing in
 
     \
 Tokenization involves breaking down a stream of code into smaller, meaningful units called tokens. These tokens can be keywords (like `if`, `for`, or `while`), identifiers (user-defined names like variable or function names), operators (such as `+`, `-`, or `*`), or special symbols (like `;`, `(`, or `)`). The process is analogous to how we segment sentences into individual words. Just as spaces separate words in a sentence, specific delimiters in the code (like whitespace, punctuation, or operators) signal the boundaries between tokens in the code stream. 
-
+v
 \
 The importance of tokenization in static analysis stems from its role in transforming raw code into a structured representation. This structured representation, often in the form of an abstract syntax tree (AST), allows for efficient analysis of the code's syntax, semantics, and potential issues. By identifying the individual tokens and their types, static analysis tools can understand the basic building blocks of the code and perform checks for errors, inefficiencies, or security vulnerabilities. Tokenization paves the way for further analysis phases, enabling static analysis tools to reason about the code's structure, data flow, and potential control flow paths.
 
@@ -560,7 +561,7 @@ One of the key strengths of this system is that it is specifically designed for 
 )
 
 \
-An evaluation of the system was conducted by comparing the system's feedback with suggestions from teachers on how to improve student code. The results showed a strong correlation between the suggestions offered by the system and those provided by the teachers. Additionally, a preliminary study with students indicated that the system's hints are helpful for solving refactoring exercises.
+An evaluation of the system was conducted by comparing the system's feedback with suggestions from teachers on how to improve student code. The results showed a strong correlation between the suggestions offered by the system and those provided by the teachers. Additionally, a preliminary study with students indicated that the system's hints help solve refactoring exercises.
 
 \
 
@@ -589,14 +590,11 @@ Leveraging static analysis and LLMs offers several advantages over the tutoring 
 
 #par([
     \
-    
-    // These people are brain-dead. bro! man started spewing algorithms talking about central neural networks, IM USING A FUCKING OPEN SOURCE LLM JEEZ, not building one
-    // > Dada is a tiny man inside and out, he has Napoleon syndrome
 
     === Codacy
 
     \
-    While numerous SCA tools exist, Codacy offers a user-friendly and comprehensive solution specifically designed to streamline the code review process [3].
+    While numerous SCA tools exist, Codacy offers a user-friendly and comprehensive solution specifically designed to streamline the code review process.
 
 \
 One of Codacy's key strengths lies in its ease of use.  The platform boasts a user-friendly interface that simplifies integration with popular development workflows and version control systems @codacy. This allows developers to seamlessly incorporate SCA into their existing development routine, minimizing disruption and promoting continuous code improvement.  Furthermore, Codacy offers analysis for a broad range of programming languages, making it a versatile tool for teams working on diverse projects @codacy.
@@ -671,7 +669,7 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
 #par([
     == Requirements Analysis
     \
-    In software development, requirement analysis includes the descriptions of the services that would be provided by the system, as well as its operational limits. It lays down the features that are required to suit the users’ requirements, these requirements are then further separated into functional and non-functional requirements. The various requirements for the proposed system are detailed in this section.
+    In software development, requirement analysis includes the descriptions of the services that would be provided by the system, as well as its operational limits. It lays down the features that are required to suit the users’ requirements, these requirements are then further separated into functional requirements, non-functional requirements and user experience requirements. The various requirements for the proposed system are detailed in this section.
 
     \
     === Functional Requirements
@@ -679,7 +677,7 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
     Functional requirements of the system are specific functionalities or services that the system is expected to perform. They describe what the application should do and include operations, activities, computational tasks, data manipulation, user interface behavior, and more. These requirements are as follows:
 
     + Users should be able to input their code or to link their respective codebases from code hosting sites.
-    + Users whould be allowed to select the coding conventions they want to adhere to.
+    + Users should be allowed to select the coding conventions they want to adhere to.
     + The system should analyze the code and provide feedback on areas that need improvement.
     + The system should generate appropriate and contextually relevant explanations and justifications based on the content of the code and the suggestions made.
     + The system should allow users to view the code and the suggestions side by side.
@@ -690,16 +688,185 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
     \
     === Non-Functional Requirements
     \
-    Non-functional requirements are not directly related to the system functionality but rather are defined in terms of system performance. They explain the systems behaviour, features and overall attributes that can affect the users experience.
+    Non-functional requirements are not directly related to the system functionality but rather are defined in terms of system performance. They explain the system behavior, features and overall attributes that can affect the user's experience.
     The non-functional requirements for the system in this study are as follows:
 
     + The system should be user-friendly and easy to navigate.
-    + The sytem should seamlessly engage with code hosting repositories like GitHub for easy retrival and pushing of code.
+    + The system should seamlessly engage with code hosting repositories like GitHub for easy retrieval and pushing of code.
     + The system should provide feedback within a reasonable time frame.
-    // + The system should be able to handle large codebases.
-    // + The system should be secure and protect user data.
-    // + The system should be scalable and able to adapt to new coding conventions.
     + The system should be able to provide explanations and justifications that are contextually relevant to the submitted code.
     + The system should be able to provide a summary of the code review.
+
+    \
+    === User Experience Requirements
+    \
+    User experience requirements are the factors that specify the expected things the user should encounter while making use of the system and the outcome of their experience. In the case of this system, the user experience requirements include:
+
+    + The system should be easy to use and navigate.
+    + The system should provide clear and concise feedback.
+    + The system should provide explanations and justifications that are easy to understand.
+    + The system should provide a summary of the code review.
+    + The system should allow users to download the reviewed code.
+
 ])
 
+#par([
+    == Data Collection
+    \
+    Two large datasets were used to re‑train/fine‑tune the Dolphin 2.5 Mixtral 8x7b model. The first dataset, MSR 2019, is a large dataset containing javascript code snippets extracted from Stack Overflow posts and the results of running ESLint to identify potential errors and stylistic issues @fer_2019. The second dataset comprises parsed ASTs in JSON format used in the study by #cite(<raychev_2016>, form: "prose"). These datasets are extensive, containing more than 480,000 JavaScript code files.
+    
+    \
+    === Description of the MSR 2019 Dataset
+    \
+    Ferreira Campos, Smethurst, Moraes, Bonifácio, and Pinto (2019) conducted a study to characterize the common coding violations in contemporary JavaScript code, resulting in the MSR 2019 dataset. It contains 336,000 JavaScript code snippets extracted from Stack Overflow posts. The code snippets were retrieved from SOT#smallcaps("orrent") @sot_2019, a dataset that curates the extraction and evolution of Stack Overflow code snippets. The data was pre-processed and stored in a CSV file for further processing. The CSV file is in the following format:
+
+    + ID of the question (PostId)
+    + Content (in this case the code block)
+    + Length of the code block
+    + Line count of the code block
+    + Score of the post
+    + Title
+
+
+    #figure(
+        image("images/mining.png", width: 100%),
+            caption: [A sample of the rows and columns of the pre-processed javascript code snippet dataset.]
+    )
+
+    A simple Python script then processed the CSV file, extracting the code and merging all code blocks into their respective JavaScript files named after the PostID. This resulted in 336,000 Javascript files. Next, a script split the processed dataset into 20 evenly distributed parts and ran 20 instances of ESLint to generate reports, producing 20 JSON files.
+
+    \
+    === Description of the 150k Javascript Dataset
+    \
+    The second dataset, which was used to train and evaluate the DeepSyn tool #cite(<raychev_2016>, form: "prose"), comprises JavaScript programs collected from GitHub repositories. This dataset was meticulously preprocessed to remove duplicate files, project forks, and obfuscated files. The programs were then parsed using the error-tolerant Acorn parser and subsequently tokenized and converted into Abstract Syntax Trees (ASTs) in JSON format. For training and evaluation purposes, the dataset was divided into training, validation, and test sets. The resulting dataset is a comprehensive collection of parsed AST serialized in JSON format, ready for analysis and application.
+    
+    \
+    As an example, given a simple program to print "Hello World!" in javascript:
+    #code-figure(
+        "Example javascript code",
+        ```
+        console.log("Hello World!");
+        ```
+    )
+
+    \
+    The serialized AST in JSON format is as follows:
+    #code-figure(
+        "Example of a serialized AST in JSON format of the chosen dataset",
+        ```
+        [ 
+            {"id":0, "type": "Program", "children":[1]}, 
+            {"id":1, "type": "ExpressionStatement", "children":[2]}, 
+            {"id":2, "type": "CallExpression", "children":[3,6]}, 
+            {"id":3, "type": "MemberExpression", "children":[4,5]}, 
+            {"id":4, "type": "Identifier", "value": "console"}, 
+            {"id":5, "type": "Property", "value": "log"},
+            {"id":6, "type": "LiteralString", "value": "Hello World!"}
+        ]
+        ```
+    )
+
+    To evaluate the performance after tuning the Dolphin Mixtral model, we will utilize 50,000 files from this dataset.
+])
+
+#par([
+    \
+    == Physical Design
+    \
+    A physical design represents the physical elements of a software system and relates to the actual input/output operations of the system. The focus is on how data is entered into the system, validated, processed, and output. It has two major categories, the input design and the output design. For this system, the physical design is concerned with how the code is inputted into the system, how the system processes the code, and how the system outputs the results of the code review. These design considerations are essential to generate a working system that specifies all the features of a candidate system.
+])
+#par([
+    \   
+    === The Proposed System Architecture
+    \
+    The system architecture describes the structure of the system and the components that make up the system. It provides a high-level overview of how the system will be designed and how the components will interact with each other. The system architecture for the proposed system is detailed in this section.
+
+    The proposed intelligent code review application is composed of several components designed to streamline and enhance the code review process. These components include the Code Importer or Fetcher mechanism (Github integration or manually importing code), a simple static analysis engine, a user-friendly interface for users, a recommendations module or generator (Dolphin Mixtral model), and a comprehensive reporting system. Additionally, the application integrates with version control systems such as Git. The functions of the components of the architecture are as follows:
+
+    *Code Importer/Fetcher:* 
+    \
+    This component allows users to import their code into the system either by linking their codebases from code hosting repositories like GitHub or by manually uploading their code. This component serves as the entry point for the code review process.
+
+    *Static Analysis Architecture*
+    \
+    The system's static analyzer plays a crucial role in examining user-submitted code. It begins by tokenizing the code, parsing it, and constructing an abstract syntax tree (AST) to comprehend the code's structure and semantics. Through this analysis, it identifies code quality concerns, adherence to coding conventions, and areas for enhancement. The static analyzer encompasses several key components:
+
+    // + Lexer: The lexer, or lexical analyzer, is the component that performs the tokenization process. It reads the raw source code and converts it into tokens, which are the basic building blocks for the parser.
+
+    // + Parser: Utilizing the recursive descent parsing method, the parser assembles the AST by traversing the grammar rules systematically. This methodical approach captures the hierarchical relationships within the code, providing a structured overview of its composition. 
+
+    // + Semantic Analyzer: After the AST is generated, the semantic analyzer takes over to check for semantic correctness. It ensures that the code adheres to the rules of the programming language and verifies the meaning and logic behind the code constructs. This component can identify issues such as type mismatches, undeclared variables, and improper use of language features.
+
+    // + Code Rule Enforcement: This component evaluates the code against predefined coding standards and best practices. It checks for stylistic issues, such as consistent indentation, naming conventions, and proper use of comments.
+
+    // + Report Generation: Once the analysis is complete, the system generates a detailed report highlighting the identified issues, the AST, and code snippets. This report serves as a query that would be fed to the LLM for contextual recommendations or suggestions based on the violations found in the analysis.
+
+    + Lexer: The lexer tokenizes raw source code into tokens, facilitating further analysis.
+
+    + Parser: The parser constructs an Abstract Syntax Tree (AST) using a recursive descent parsing method, capturing code hierarchy systematically.
+    
+    + Semantic Analyzer: The semantic analyzer verifies the code's semantic correctness, ensuring adherence to programming language rules and identifying logical errors.
+
+    + Code Rule Enforcement: This component checks code against coding standards, detecting stylistic issues and ensuring consistency.
+
+    + Report Generation: Detailed reports are created, highlighting the identified issues, the AST, and code snippets. This report serves as a query that would be fed to the LLM for contextual recommendations or suggestions based on the violations found in the analysis.
+
+    \
+    *User Interface*
+    \
+    The user interface component provides an intuitive and user-friendly platform for users to interact with the system. It offers functionalities for code submission, viewing analysis results, accepting or rejecting suggestions, and downloading the reviewed code.
+
+    \
+    *Recommendations Module*
+    \
+    The recommendations module, powered by the Dolphin Mixtral model, generates contextually relevant suggestions based on the code analysis results. Leveraging the model's deep learning capabilities, the module provides nuanced feedback, explanations, and justifications for the identified issues. It offers actionable insights to users, guiding them toward code quality improvement and best practices.
+
+    \
+    *Reporting System*
+    \
+    The reporting system compiles the analysis results, recommendations, and justifications into a comprehensive report. This report summarizes the code review process, highlighting the identified issues, suggested improvements, and contextual explanations. Users are allowed to accept the suggested changes from this report. It serves as a valuable resource for users to understand the code quality concerns and the rationale behind the recommendations.
+
+    \
+    The proposed system architecture is designed to streamline the code review process, enhance code quality, and provide users with actionable insights for code improvement. By integrating static analysis, deep learning, and user-friendly interfaces, the system aims to offer a comprehensive solution for code review and quality assurance.
+])
+
+#par([
+    \
+    == Logical Design
+    \
+    The logical design of a system describes the functional requirements of the system and how these requirements are implemented. It refers to the conceptual and abstract representation of a system's architecture, functionality, and components. For the proposed system, the goal of logical design is to define the system's structure, data flow, interfaces, and interactions between various components in a way that is independent of any particular technology or platform. The logical design of the proposed system is detailed in this section.
+
+    \
+    === Use Case Diagram
+    \
+    A use case diagram is a visual representation of the interactions between users and a system. It illustrates the various ways users can interact with the system and the system's responses to these interactions.
+
+    The use-case diagram for the proposed system shows that a user can interact with the system by importing their code, analyzing the code, viewing the analysis results, accepting or rejecting suggestions, and downloading the reviewed code. The system, in turn, processes the code, generates recommendations, provides explanations, and compiles a summary report for the user.
+
+    #figure(
+        image("images/use_case.svg", width: 80%),
+            caption: [Use Case Diagram for the Proposed System]
+    )
+
+    The use-case diagram provides a high-level overview of the system's functionality and user interactions, outlining the key features and capabilities of the proposed system.
+
+    \
+    == Activity Diagram
+    \
+    An activity diagram illustrates the flow of activities within a system, showing the sequence of actions and decisions that occur during a process. It provides a detailed view of how the system processes information and performs tasks, describing the steps in a use case diagram.
+
+    #figure(
+        image("images/activity.svg", width: 60%),
+            caption: [Use Case Diagram for the Proposed System]
+    )
+
+    \
+    == Sequence Diagram
+    \
+    A sequence diagram shows how objects interact in a particular scenario of a use case. It illustrates the sequence of messages exchanged between objects, highlighting the order of interactions and the flow of control in a system.
+
+    #figure(
+        image("images/sequence.svg", width: 100%),
+            caption: [Sequence Diagram for the Proposed System]
+    )
+])

@@ -18,7 +18,7 @@
 // make a figure of code and pretend it's an image
 #let code-figure(caption, code) = {
   figure(
-    block(fill: luma(240), width: 90%, inset: 10pt, radius: 5pt, code),
+    block(fill: luma(240), width: 100%, inset: 10pt, radius: 5pt, code),
     caption: caption,
     kind: image,
     supplement: "Figure",
@@ -41,13 +41,13 @@
   abstract: none,
   supervisor: none,
   dedication: none,
-  acknowledgements: none,
+  acknowledgments: none,
   reference-path: none,
   date: datetime.today(),
   print: none,
   content,
 ) = {
-  set page(paper: "a4", margin: (top: 1in, bottom: 1in, left: 1.5in, right: 1in))
+  set page(paper: "a4", margin: (top: 2.54cm, bottom: 2.54cm, left: 3.81cm, right: 2.54cm))
   set par(justify: true, leading: 0.75em)
   set heading(numbering: "1.")
   set text(font: "New Computer Modern", 12pt, hyphenate: false,)
@@ -70,6 +70,9 @@
 
   // code block font
   show raw: set text(font: "FiraCode Nerd Font Mono")
+
+  // code block alignment
+  // show raw: set align(left)
 
   // table headings bold
   show table.cell.where(y: 0): set text(weight: "bold")
@@ -194,7 +197,7 @@
 
   // acknowledgements
   heading("Acknowledgements", numbering: none)
-  blankify(acknowledgements)
+  blankify(acknowledgments)
   pagebreak(weak: true)
 
   // tables of contents, tables, figures

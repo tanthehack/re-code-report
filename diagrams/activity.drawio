@@ -1,0 +1,99 @@
+<mxfile host="app.diagrams.net" modified="2024-05-25T16:13:19.494Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="K7joloiKsOgfInmbVwUm" version="24.4.8" type="device">
+  <diagram name="Page-1" id="ajht4XzWFmL7vWg0zijm">
+    <mxGraphModel dx="1245" dy="867" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OQ17qS5_Y7gDZYgh9Sg8-2" target="OQ17qS5_Y7gDZYgh9Sg8-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-2" value="" style="ellipse;fillColor=strokeColor;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="260" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="OQ17qS5_Y7gDZYgh9Sg8-7" target="OQ17qS5_Y7gDZYgh9Sg8-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-7" value="User imports code into the system" style="html=1;align=center;verticalAlign=top;rounded=1;absoluteArcSize=1;arcSize=10;dashed=0;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="385" y="330" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="OQ17qS5_Y7gDZYgh9Sg8-9" target="OQ17qS5_Y7gDZYgh9Sg8-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="OQ17qS5_Y7gDZYgh9Sg8-9" target="OQ17qS5_Y7gDZYgh9Sg8-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-9" value="" style="rhombus;whiteSpace=wrap;html=1;verticalAlign=top;rounded=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="432.5" y="410" width="45" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OQ17qS5_Y7gDZYgh9Sg8-11" target="OQ17qS5_Y7gDZYgh9Sg8-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-11" value="System conducts analysis on the imported code and generates a report&amp;nbsp;" style="whiteSpace=wrap;html=1;verticalAlign=top;rounded=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="382.5" y="525" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-16" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="OQ17qS5_Y7gDZYgh9Sg8-13" target="OQ17qS5_Y7gDZYgh9Sg8-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-13" value="System connects to a GitHub account&amp;nbsp; for authentication" style="whiteSpace=wrap;html=1;verticalAlign=top;rounded=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="620" y="400" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="OQ17qS5_Y7gDZYgh9Sg8-15" target="OQ17qS5_Y7gDZYgh9Sg8-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-15" value="System displays available code repositories&amp;nbsp;" style="whiteSpace=wrap;html=1;verticalAlign=top;rounded=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="630" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="OQ17qS5_Y7gDZYgh9Sg8-18" target="OQ17qS5_Y7gDZYgh9Sg8-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-18" value="System generates and displays recommendations based on the code analysis" style="whiteSpace=wrap;html=1;verticalAlign=top;rounded=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="370.68" y="753" width="167.5" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-20" value="Imports code from GitHub" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="504" y="398" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-21" value="Manually imports code" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="370.68" y="469" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="OQ17qS5_Y7gDZYgh9Sg8-22" target="OQ17qS5_Y7gDZYgh9Sg8-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-22" value="User selects the code repository to be reviewed" style="whiteSpace=wrap;html=1;verticalAlign=top;rounded=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="630" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="OQ17qS5_Y7gDZYgh9Sg8-25" target="OQ17qS5_Y7gDZYgh9Sg8-39">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-25" value="User accepts or rejects suggestions or recommendations" style="whiteSpace=wrap;html=1;verticalAlign=top;rounded=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="381.93" y="863" width="145" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-32" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="OQ17qS5_Y7gDZYgh9Sg8-29" target="OQ17qS5_Y7gDZYgh9Sg8-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="OQ17qS5_Y7gDZYgh9Sg8-29" target="OQ17qS5_Y7gDZYgh9Sg8-43">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-29" value="" style="rhombus;whiteSpace=wrap;html=1;verticalAlign=top;rounded=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="431.93" y="663" width="45" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-34" value="No recommendations" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="513.43" y="650" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-35" value="Recommendations" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="359.43" y="703" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-42" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="OQ17qS5_Y7gDZYgh9Sg8-39" target="OQ17qS5_Y7gDZYgh9Sg8-43">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="654.4300000000003" y="1026.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-39" value="User downloads the reviewed code" style="whiteSpace=wrap;html=1;verticalAlign=top;rounded=1;arcSize=10;dashed=0;" vertex="1" parent="1">
+          <mxGeometry x="394.43" y="1003" width="120" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="OQ17qS5_Y7gDZYgh9Sg8-43" value="" style="ellipse;html=1;shape=endState;fillColor=strokeColor;" vertex="1" parent="1">
+          <mxGeometry x="639.4300000000003" y="1011.5" width="30" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
