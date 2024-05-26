@@ -781,7 +781,7 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
     \
     The system architecture describes the structure of the system and the components that make up the system. It provides a high-level overview of how the system will be designed and how the components will interact with each other. The system architecture for the proposed system is detailed in this section.
 
-    The proposed intelligent code review application is composed of several components designed to streamline and enhance the code review process. These components include the Code Importer or Fetcher mechanism (Github integration or manually importing code), a simple static analysis engine, a user-friendly interface for users, a recommendations module or generator (Dolphin Mixtral model), and a comprehensive reporting system. Additionally, the application integrates with version control systems such as Git. The functions of the components of the architecture are as follows:
+    The proposed intelligent code review application is composed of several components designed to streamline and enhance the code review process. These components include the Code Importer or Fetcher mechanism (Github integration or manually importing code), a simple static analysis engine, a user-friendly interface for users, a recommendations module or generator (Dolphin Mixtral model), and a comprehensive reporting system. The functions of the components of the architecture are as follows:
 
     *Code Importer/Fetcher:* 
     \
@@ -826,8 +826,14 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
     \
     The reporting system compiles the analysis results, recommendations, and justifications into a comprehensive report. This report summarizes the code review process, highlighting the identified issues, suggested improvements, and contextual explanations. Users are allowed to accept the suggested changes from this report. It serves as a valuable resource for users to understand the code quality concerns and the rationale behind the recommendations.
 
+    #figure(
+        image("images/system.svg", width: 60%),
+            caption: [The Proposed System Architecture]
+    )
+
     \
-    The proposed system architecture is designed to streamline the code review process, enhance code quality, and provide users with actionable insights for code improvement. By integrating static analysis, deep learning, and user-friendly interfaces, the system aims to offer a comprehensive solution for code review and quality assurance.
+    
+The proposed system architecture consists of three layers. The Presentation Layer interfaces with the user, displays data, and handles inputs through a web-based front end built with the React Javascript framework. The Application Layer manages application logic, and workflows, featuring controllers for handling HTTP requests, and services for core functionalities like code importing from GitHub, static code analysis, generating recommendations with the Dolphin Mixtral model, and creating detailed analysis reports, alongside data transfer objects for formatting. The Integration Layer handles communication with external systems, including repositories for code interactions and API clients for integrating with services like GitHub.
 ])
 
 #par([
@@ -843,6 +849,7 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
 
     The use-case diagram for the proposed system shows that a user can interact with the system by importing their code, analyzing the code, viewing the analysis results, accepting or rejecting suggestions, and downloading the reviewed code. The system, in turn, processes the code, generates recommendations, provides explanations, and compiles a summary report for the user.
 
+    \
     #figure(
         image("images/use_case.svg", width: 80%),
             caption: [Use Case Diagram for the Proposed System]
@@ -857,7 +864,7 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
 
     #figure(
         image("images/activity.svg", width: 60%),
-            caption: [Use Case Diagram for the Proposed System]
+            caption: [Activity Diagram for the Proposed System]
     )
 
     \
@@ -874,4 +881,10 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
     == Conceptual Design
     \
     The conceptual design of the system outlines the high-level structure and components of the system. This section shows the Entity Relationship Diagram (ERD) for the proposed system, detailing the entities and their relationships.
+
+    \
+    #figure(
+        image("images/erd.svg", width: 90%),
+            caption: [Entity Relationship Diagram for the Proposed System]
+    )
 ])
