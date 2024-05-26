@@ -677,7 +677,6 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
     Functional requirements of the system are specific functionalities or services that the system is expected to perform. They describe what the application should do and include operations, activities, computational tasks, data manipulation, user interface behavior, and more. These requirements are as follows:
 
     + Users should be able to input their code or to link their respective codebases from code hosting sites.
-    + Users should be allowed to select the coding conventions they want to adhere to.
     + The system should analyze the code and provide feedback on areas that need improvement.
     + The system should generate appropriate and contextually relevant explanations and justifications based on the content of the code and the suggestions made.
     + The system should allow users to view the code and the suggestions side by side.
