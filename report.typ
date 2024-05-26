@@ -661,7 +661,7 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
 #par([
     == The proposed system
     \ 
-    This proposed project will be a web-based application. It will allow users to connect their codebases through code hosting repositories like GitHub or allow users to import their code into the application. The application then provides an extensive review of the code, highlighting areas that need improvement, and giving recommendations on how to improve the code. The system will also provide explanations and justifications for the suggestions made using intelligent responses from a language model.
+    This proposed project is a web-based application designed to streamline code review. Users can connect their codebases through repositories like GitHub or import their code directly into the application. Once the code is imported, the application conducts an extensive review, highlighting areas for improvement and offering recommendations. Additionally, the system provides explanations and justifications for these suggestions, utilizing intelligent responses from a language model.
     
     \
 ])
@@ -869,4 +869,9 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
         image("images/sequence.svg", width: 100%),
             caption: [Sequence Diagram for the Proposed System]
     )
+
+    \
+    == Conceptual Design
+    \
+    The conceptual design of the system outlines the high-level structure and components of the system. This section shows the Entity Relationship Diagram (ERD) for the proposed system, detailing the entities and their relationships.
 ])
