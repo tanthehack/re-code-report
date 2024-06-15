@@ -18,7 +18,7 @@
 // make a figure of code and pretend it's an image
 #let code-figure(caption, code) = {
   figure(
-    block(fill: luma(240), width: 100%, inset: 10pt, radius: 5pt, code),
+    block(fill: luma(240), width: 90%, inset: 10pt, radius: 5pt, code),
     caption: caption,
     kind: image,
     supplement: "Figure",
@@ -31,6 +31,17 @@
   show figure: set block(breakable: true)
 
   figure(table, caption: caption)
+}
+
+// convert num to string for chapter headings
+#let stringify(num) = {
+  (
+    (num == "1.", "One"),
+    (num == "2.", "Two"),
+    (num == "3.", "Three"),
+    (num == "4.", "Four"),
+    (num == "5.", "Five"),
+  ).find(x => x.at(0)).at(1)
 }
 
 // template
@@ -47,15 +58,33 @@
   print: none,
   content,
 ) = {
-  set page(paper: "a4", margin: (top: 2.54cm, bottom: 2.54cm, left: 3.81cm, right: 2.54cm))
+  set page(paper: "a4", margin: (top: 1in, bottom: 1in, left: 1.5in, right: 1in))
   set par(justify: true, leading: 0.75em)
   set heading(numbering: "1.")
-  set text(font: "New Computer Modern", 12pt, hyphenate: false,)
+
+  // Times doesn't have small caps, so we improvise
+  let embiggen = if print == true { upper } else { smallcaps }
+
+  // text is comp. modern normally
+  // times when printing
+  set text(
+    font: if print == true {
+      "Times New Roman"
+    } else {
+      "New Computer Modern"
+    },
+    12pt,
+  )
+
   set enum(numbering: "i.")
 
-  set footnote.entry( // make footnotes have dots above
-    separator: repeat[.],
-  )
+  // make footnotes have dots above them
+  // except the default when printing
+  set footnote.entry(separator: if print == true {
+    line(length: 30%, stroke: 0.5pt)
+  } else {
+    repeat[.]
+  })
 
   // make heading refs. say chapter
   set ref(supplement: it => {
@@ -65,14 +94,16 @@
   })
 
   // make first row of table grey
-  set table(fill: (_, y) => if y == 0 { luma(230) }, align: horizon)
+  set table(
+    fill: (_, y) => if y == 0 {
+      luma(230)
+    },
+    align: horizon,
+  )
   set table.cell(inset: 10pt) // padding
 
   // code block font
   show raw: set text(font: "FiraCode Nerd Font Mono")
-
-  // code block alignment
-  // show raw: set align(left)
 
   // table headings bold
   show table.cell.where(y: 0): set text(weight: "bold")
@@ -100,11 +131,12 @@
   // table captions top
   show figure.where(kind: table): set figure.caption(position: top)
 
-  // make heading be upper
+  // make heading be smallcaps (when pretty)
   show heading.where(level: 1): it => [
+    #i-figured.reset-counters(it, return-orig-heading: false)
     #set par(justify: false)
     #set align(center)
-    #upper(it.body)
+    #embiggen(it.body)
     #linebreak()
     #linebreak()
   ]
@@ -115,44 +147,49 @@
     [
       #set text(weight: "bold", size: 14pt)
       #set par(justify: false)
-      #upper(
-        [
-          #title
+      #embiggen([
+        #title
 
-          #linebreak()
-          #linebreak()
-          #linebreak()
+        #linebreak()
+        #linebreak()
+        #linebreak()
 
-          by
+        by
 
-          #linebreak()
-          #linebreak()
-          #linebreak()
+        #linebreak()
+        #linebreak()
+        #linebreak()
 
-          #author
-          #linebreak()
-          (#matric)
+        #author
+        #linebreak()
+        (#matric)
 
-          #linebreak()
+        #linebreak()
 
-          A Project Submitted to the Department of Computer and Information Sciences,
-          College of Science and Technology, Covenant University Ota, Ogun State.
+        A Project Submitted to the Department of Computer and Information Sciences,
+        College of Science and Technology, Covenant University Ota, Ogun State.
 
-          #linebreak()
+        #linebreak()
 
-          In Partial Fulfilment of the Requirements for the Award of the Bachelor of
-          Science (Honours) Degree in Computer Science.
+        In Partial Fulfilment of the Requirements for the Award of the Bachelor of
+        Science (Honours) Degree in Computer Science.
 
-          #linebreak()
+        #linebreak()
 
-          #date.display("[month repr:long] [year]")
-        ],
-      )
+        #date.display("[month repr:long] [year]")
+      ])
     ],
   )
 
   pagebreak(weak: true)
-  set page(numbering: "i.", number-align: center)
+  set page(
+    numbering: "i",
+    number-align: if print == true {
+      center
+    } else {
+      right
+    },
+  )
   counter(page).update(1)
 
   // certification
@@ -166,6 +203,8 @@
 
   linebreak()
   linebreak()
+  linebreak()
+  linebreak()
 
   grid(
     columns: (55%, auto),
@@ -176,6 +215,9 @@
     align(center)[*Signature and Date*],
   )
 
+  linebreak()
+  linebreak()
+  linebreak()
   linebreak()
   linebreak()
 
@@ -219,45 +261,28 @@
   set page(numbering: "1")
   counter(page).update(1)
 
-  let conv(x) = {
-    if x == "1." {
-      "One"
-    } else if x == "2." {
-      "Two"
-    } else if x == "3." {
-      "Three"
-    } else if x == "4." {
-      "Four"
-    } else if x == "5." {
-      "Five"
-    }
-  }
-
-  // make heading have "chapter x" on top and upper
+  // make heading have "chapter x" on top and smallcaps
   show heading.where(level: 1): it => [
+    #i-figured.reset-counters(it, return-orig-heading: false)
     #set par(justify: false)
     #set align(center)
-    #upper("Chapter " + conv(counter(heading).display()))
     #linebreak()
-    #upper(it.body)
+    #embiggen("Chapter " + stringify(counter(heading).display()))
+    #linebreak()
+    #embiggen(it.body)
     #linebreak()
     #linebreak()
   ]
-
-  //make all headings upper
-  show heading: it => [
-    #upper(it)
-  ]
-
 
   content
 
   // references
-  // make heading be upper
+  // make heading be smallcaps
   show heading.where(level: 1): it => [
+    #i-figured.reset-counters(it, return-orig-heading: false)
     #set par(justify: false)
     #set align(center)
-    #upper(it.body)
+    #embiggen(it.body)
     #linebreak()
     #linebreak()
   ]

@@ -17,6 +17,7 @@ I am extremely grateful to my parents, Mr and Mrs Ekekwe for their sacrifices, c
 
 \
 My sincere gratitude also goes to my hardworking supervisor, Dr Itunuoluwa Isewon, who provided her support even when she was on a work break. Thank you for your excellent supervision and guidance ma.],
+print: true,
     content,
 )
 
@@ -90,7 +91,9 @@ Although existing code review platforms offer insights into basic coding style i
     + Acquiring sufficient datasets from coding standards documents or open-source code repositories and processing them using data processing tools such as Python libraries (Pandas, Natural Language Toolkit (NLTK), or Spacy). 
     + Modelling and designing the intelligent code review tool components using UML diagrams such as an activity diagram, sequence diagram, use case diagram, etc., and system architecture diagrams. 
     + Designing the user interface (UI) and user experience (UX) of the tool using the design tool Figma. 
-    + Implementation of a working prototype of the tool using the React framework for the frontend, Rust for the static analyzer component, and for the backend and transfer learning with the Dolphin Model based on Mixtral @hartford_dolphin for the explanation module.
+    + Implementation of a working prototype of the tool using the React framework for the frontend, Rust for the static analyzer component, and for the backend and transfer learning with the CodeLlama-7B-Instruct-GGUF Model based off of Meta's CodeLlama 7b Instruct @llama for the explanation module.
+
+    //(Dolphin Model based on Mixtral @hartford_dolphin) 
 ])
 
 #pagebreak(weak: true)
@@ -145,7 +148,7 @@ Although existing code review platforms offer insights into basic coding style i
         [
             *Implementation of a working Prototype*
             \
-        Implementation of a working prototype of the tool using the React framework for the frontend, Rust for the static analyzer component, and for the backend and transfer learning with the Dolphin Model based on Mixtral @hartford_dolphin for the explanation module.
+        Implementation of a working prototype of the tool using the React framework for the frontend, Rust for the static analyzer component, and for the backend and transfer learning with the CodeLlama-7B-Instruct-GGUF Model based off of Meta's CodeLlama 7b Instruct @llama for the explanation module.
         ]
     ),
 )
@@ -644,9 +647,11 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
 
     \
     
-    Overall, LLM-based code review offers a more scalable, adaptable, and effective approach to improving code quality, particularly for preparing students for the demands of professional software development. The proposed approach will utilize transfer learning approach by fine-tuning the Dolphin Model @hartford_dolphin with a smaller conventions dataset.
+    Overall, LLM-based code review offers a more scalable, adaptable, and effective approach to improving code quality, particularly for preparing students for the demands of professional software development. The proposed approach will utilize transfer learning approach by fine-tuning the CodeLlama-7B-Instruct-GGUF Model, @llama for the explanation module. with a smaller conventions dataset.
 
 ])
+
+#pagebreak(weak: true)
 
 #par([
     = System Analysis and Design
@@ -712,7 +717,7 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
 #par([
     == Data Collection
     \
-    Two large datasets were used to re‑train/fine‑tune the Dolphin 2.5 Mixtral 8x7b model. The first dataset, MSR 2019, is a large dataset containing javascript code snippets extracted from Stack Overflow posts and the results of running ESLint to identify potential errors and stylistic issues @fer_2019. The second dataset comprises parsed ASTs in JSON format used in the study by #cite(<raychev_2016>, form: "prose"). These datasets are extensive, containing more than 480,000 JavaScript code files.
+    Two large datasets were used to re‑train/fine‑tune the large  CodeLlama-7B-Instruct-GGUF Model. The first dataset, MSR 2019, is a large dataset containing javascript code snippets extracted from Stack Overflow posts and the results of running ESLint to identify potential errors and stylistic issues @fer_2019. The second dataset comprises parsed ASTs in JSON format used in the study by #cite(<raychev_2016>, form: "prose"). These datasets are extensive, containing more than 480,000 JavaScript code files.
     
     \
     === Description of the MSR 2019 Dataset
@@ -765,7 +770,7 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
         ```
     )
 
-    To evaluate the performance after tuning the Dolphin Mixtral model, we will utilize 50,000 files from this dataset.
+    To evaluate the performance after tuning the model, we will utilize 50,000 files from this dataset.
 ])
 
 #par([
@@ -780,7 +785,7 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
     \
     The system architecture describes the structure of the system and the components that make up the system. It provides a high-level overview of how the system will be designed and how the components will interact with each other. The system architecture for the proposed system is detailed in this section.
 
-    The proposed intelligent code review application is composed of several components designed to streamline and enhance the code review process. These components include the Code Importer or Fetcher mechanism (Github integration or manually importing code), a simple static analysis engine, a user-friendly interface for users, a recommendations module or generator (Dolphin Mixtral model), and a comprehensive reporting system. The functions of the components of the architecture are as follows:
+    The proposed intelligent code review application is composed of several components designed to streamline and enhance the code review process. These components include the Code Importer or Fetcher mechanism (Github integration or manually importing code), a simple static analysis engine, a user-friendly interface for users, a recommendations module or generator (CodeLlama Model), and a comprehensive reporting system. The functions of the components of the architecture are as follows:
 
     *Code Importer/Fetcher:* 
     \
@@ -818,7 +823,7 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
     \
     *Recommendations Module*
     \
-    The recommendations module, powered by the Dolphin Mixtral model, generates contextually relevant suggestions based on the code analysis results. Leveraging the model's deep learning capabilities, the module provides nuanced feedback, explanations, and justifications for the identified issues. It offers actionable insights to users, guiding them toward code quality improvement and best practices.
+    The recommendations module, powered by the CodeLlama-7B-Instruct-GGUF Model, generates contextually relevant suggestions based on the code analysis results. Leveraging the model's deep learning capabilities, the module provides nuanced feedback, explanations, and justifications for the identified issues. It offers actionable insights to users, guiding them toward code quality improvement and best practices.
 
     \
     *Reporting System*
@@ -832,7 +837,7 @@ While Codacy offers a user-friendly and comprehensive SCA solution, it has limit
 
     \
     
-The proposed system architecture consists of three layers. The Presentation Layer interfaces with the user, displays data, and handles inputs through a web-based front end built with the React Javascript framework. The Application Layer manages application logic, and workflows, featuring controllers for handling HTTP requests, and services for core functionalities like code importing from GitHub, static code analysis, generating recommendations with the Dolphin Mixtral model, and creating detailed analysis reports, alongside data transfer objects for formatting. The Integration Layer handles communication with external systems, including repositories for code interactions and API clients for integrating with services like GitHub.
+The proposed system architecture consists of three layers. The Presentation Layer interfaces with the user, displays data, and handles inputs through a web-based front end built with the React Javascript framework. The Application Layer manages application logic, and workflows, featuring controllers for handling HTTP requests, and services for core functionalities like code importing from GitHub, static code analysis, generating recommendations with the CodeLlama model, and creating detailed analysis reports, alongside data transfer objects for formatting. The Integration Layer handles communication with external systems, including repositories for code interactions and API clients for integrating with services like GitHub.
 ])
 
 #par([
@@ -886,4 +891,205 @@ The proposed system architecture consists of three layers. The Presentation Laye
         image("images/erd.svg", width: 90%),
             caption: [Entity Relationship Diagram for the Proposed System]
     )
+])
+
+#pagebreak(weak: true)
+
+#par([
+    = System Implementation and Evaluation
+
+    == Preamble
+    \ 
+    This chapter of the report entails the actual implementation of the proposed intelligent code review system. It details the tools used for the implementation, the hardware and software requirements, the development methodology, and the evaluation of the system.
+
+    == System Requirements
+    \
+    System requirements are the specifications that define the functionalities and features of the system. They detail the hardware and software requirements necessary for the system to operate effectively. It includes both the software anf hardware requirements for the system.
+
+    === Hardware Requirements
+    \
+    These are the requirements necessary for the hardware components to run the system. The hardware requirements for the proposed system are as follows:
+
+    #table-figure(
+    "Hardware Requirements Table",
+    table(
+        columns: (.3fr, 1fr, 1fr),
+        inset: 10pt,
+        align: (center, left, left),
+        table.header[*S/N*][*REQUIREMENT*][*HARDWARE*], 
+        $1$, 
+        [ 
+            Processor
+        ], 
+        [ 
+            Intel Core i7 / Apple M1 Chip or higher
+        ], 
+        $2$, 
+        [ 
+            Graphics Processing Unit (GPU)
+        ], 
+        [
+            Nvidia GTX 1660 or 2060, AMD 5700 XT, or Nvidia RTX 3050 or 3060
+        ],
+        $3$, 
+        [ 
+            Memory (RAM)
+        ], 
+        [
+            16GB Ram or Higher
+        ],
+        $4$, 
+        [ 
+            Architecture
+        ],
+        [
+            64-bit (x64) architecture / ARM x64 
+        ],
+        $5$, 
+        [ 
+            Secondary Storage
+        ],
+        [
+            32GB HDD or higher
+        ]
+    ),
+)
+
+    === Software Requirements
+    \
+    These are the requirements needed by the programs of the system to run successfully. They must be pre-instlaled and set for the proposed system to run smoothly. The software requirements for the proposed system are as follows:
+
+    #table-figure(
+    "Objectives-Methodology Mapping Table",
+    table(
+        columns: (.3fr, 1fr, 1fr),
+        inset: 10pt,
+        align: (center, left, left),
+        table.header[*S/N*][*REQUIREMENT*][*SOFTWARE*], 
+        $1$, 
+        [ 
+            Operating System
+        ], 
+        [ 
+            Windows 10, macOS Big Sur or higher, Ubuntu 20.04 or higher
+        ], 
+        $2$, 
+        [ 
+            Integrated Development Environment (IDE)
+        ], 
+        [
+            Visual Studio Code, PyCharm, IntelliJ IDEA, or any other IDE
+        ],
+        $3$, 
+        [ 
+            Programming Language
+        ], 
+        [
+            Python 3.8, Javascript (NodeJs), Rust.
+        ],
+        $4$, 
+        [ 
+            Supported Browser
+        ],
+        [
+            Google Chrome, Safari, Mozilla Firefox
+        ]
+    ),
+)
+
+    == Implementation Tools
+    \
+    These are the tools used to implement the system. They include the programming languages, libraries, and frameworks used to develop the system.
+
+    *Javascript*
+    \
+    Javascript is a versatile programming language that is widely used for web development. It is essential for building interactive web applications and dynamic content on websites. In the proposed system, Javascript was used for the front-end development, utilising the React Framework with the vite bundler, and was also used in part of the backend development for serving endpoints and other API logic. 
+
+    *Python*
+    \
+    Python is a high-level programming language known for its simplicity and readability. It is widely used for various applications, including web development, data analysis, and artificial intelligence. In the proposed system, Python was used for the backend development, to fine-tune and train the CodeLlama Model. Libraries such as the Torch, Transformers (from hugging face) and more was utilized in the preparation of the model for the software system.
+
+    *Rust*
+    \
+    Rust is a systems programming language known for its performance, reliability, and memory safety. It is often used for low-level programming tasks and building high-performance applications. In the proposed system, Rust was used for the static analysis engine, which tokenizes, parses, and analyzes the user-submitted code. The Rust programming language was chosen for its speed, safety features, and suitability for building efficient code analysis tools.
+
+    *Visual Studio Code*
+    \
+    Visual Studio Code is a popular code editor developed by Microsoft. It is widely used by developers for its versatility, extensibility, and rich feature set. In the proposed system, Visual Studio Code was used as the primary code editor for developing the system components.
+
+    == Development Methodology
+    \
+    The software development methodology employed in the implementation of the proposed system is an agile approach. Agile methodologies are iterative and incremental, focusing on collaboration, flexibility, and adaptability. The agile approach allows for continuous feedback, rapid development cycles, and the ability to respond to changing requirements. The development process is divided into sprints, with each sprint focusing on specific features or functionalities. The agile methodology enables the development team to deliver a working product incrementally, ensuring that the system meets user requirements and expectations.
+
+    The study involved initially following the waterfall model to define the system requirements, analyze the system, design the system, and implement the system. However, the development process was later shifted to an agile approach to accommodate changing requirements, incorporate feedback, and deliver a working system incrementally. The agile methodology allowed for flexibility, collaboration, and continuous improvement throughout the development process.
+
+    // == Evaluation of the System
+    // \
+
+    // === Evaluation Criteria
+    // \
+
+    // === Evaluation Results
+    // \
+
+    // === Discussion
+    // \
+
+    == Program Modules and interfaces
+    \
+    This section details the sections of the user interface and modules of the intelligent code review system.
+
+    === The Import Module
+    \
+    This is the screen where users choose where to import their code from. They can either import from GitHub or upload their code directly. The screens are shown in Figures 4.1 to 4.3 .
+
+    #figure(
+        image("images/import.png", width: 80%),
+            caption: [The Import and Sign in Pages]
+    )
+
+    \
+
+    #figure(
+        image("images/import2.png", width: 80%),
+            caption: [The Import page for github authentication.]
+    )
+
+    \
+
+    #figure(
+        image("images/import3.png", width: 80%),
+            caption: [The Import page for choosing a specific repository]
+    )
+
+    === The Code Review Module
+    \
+    This module is where the code is analyzed and suggestions are presented to the user. The screens are shown in the figure below.
+
+    \
+    #figure(
+        image("images/import3.png", 
+        width: 80%),
+        caption: [
+            The code review screens
+        ]
+    ) 
+])
+
+#pagebreak(weak: true)
+
+#par([
+    = Summary, Recommendations and conclusion
+
+    == Preamble
+    \ 
+
+    == Summary
+    \
+
+    == Recommendations
+    \
+
+    == Conclusion
+    \
 ])

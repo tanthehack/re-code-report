@@ -2,19 +2,19 @@ Here's what you'd need to gather and process for programming convention datasets
 
 **Data Gathering:**
 
-* **Coding Standards Documents:** Collect coding standard documents for the programming languages you want to support. These documents outline the specific conventions expected for that language (e.g., PEP 8 for Python, Google JavaScript Style Guide). 
-* **Open-Source Code Repositories:**  Mine code from well-maintained open-source repositories written in your target languages. Look for repositories with high ratings and active communities to ensure code quality. 
+* **Coding Standards Documents:** Collect coding standard documents for the programming languages you want to support. These documents outline the specific conventions expected for that language (e.g., PEP 8 for Python, Google JavaScript Style Guide).
+* **Open-Source Code Repositories:**  Mine code from well-maintained open-source repositories written in your target languages. Look for repositories with high ratings and active communities to ensure code quality.
 * **Public Code Datasets:** Explore existing public datasets containing labeled code examples. Some resources include Kaggle, UCI Machine Learning Repository, and CodeClimate's open-source dataset. These datasets might have pre-labeled code snippets with specific coding convention violations.
 
 **Data Processing:**
 
 * **Code Cleaning:** The gathered code might contain irrelevant information for the static analyzer. Remove comments, whitespace, and unnecessary formatting before processing.
-* **Code Snippet Extraction:** Extract relevant code snippets that showcase specific violations of coding conventions. This could involve isolating function definitions, variable declarations, or code blocks with formatting inconsistencies. 
+* **Code Snippet Extraction:** Extract relevant code snippets that showcase specific violations of coding conventions. This could involve isolating function definitions, variable declarations, or code blocks with formatting inconsistencies.
 * **Labeling:**  Assign labels to the extracted code snippets.  These labels will indicate the specific coding convention violated in each snippet. Leverage the coding standard documents and your understanding of the conventions to accurately label the data. Here are some examples of labels:
-    * indentation_error (incorrect indentation)
-    * missing_semicolon 
-    * variable_naming_convention (violation of naming rules)
-    * unused_variable
+  * indentation_error (incorrect indentation)
+  * missing_semicolon
+  * variable_naming_convention (violation of naming rules)
+  * unused_variable
 * **Data Splitting:** Split the processed data into training, validation, and testing sets for the static analyzer. The training set will be used to train the analyzer to identify violations, the validation set will help fine-tune the model during training, and the testing set will evaluate the final performance of the analyzer.
 
 **Additional Considerations:**
@@ -52,14 +52,14 @@ Here's how your intelligent code reviewing tool can leverage open-source LLMs to
 **4. Generating In-depth Recommendations:**
 
 * The LLM will analyze the query and leverage its knowledge of coding conventions to suggest appropriate solutions. This might involve:
-    * Suggesting alternative code structures that adhere to the convention.
-    * Providing explanations for the recommended approach, including the benefits of following the convention.
-    * Offering code examples or references to relevant documentation that further explain the convention.
+  * Suggesting alternative code structures that adhere to the convention.
+  * Providing explanations for the recommended approach, including the benefits of following the convention.
+  * Offering code examples or references to relevant documentation that further explain the convention.
 
 **Resources Needed:**
 
 * **Open-source static code analyzer:** Pylint (Python), ESLint (JavaScript), CodeClimate (various languages)
-* **Open-source LLM for code:** CodeT5, Bard 
+* **Open-source LLM for code:** CodeT5, Bard
 * **Libraries for code preprocessing and tokenization:** NLTK (Python)
 * **Cloud platforms for LLM access:** Google AI Platform, Hugging Face  Transformers Hub
 * **Software development expertise:**  to integrate the components, handle data flow, and build the user interface.
@@ -71,15 +71,18 @@ Here's how your intelligent code reviewing tool can leverage open-source LLMs to
 * **Confidence Scores:**  The LLM might generate multiple suggestions. Implement a mechanism to assign confidence scores to each suggestion, indicating the LLM's certainty in its recommendation.
 * **User Interface Design:**  Develop a user interface that clearly displays the code snippet, the identified violation, and the LLM's recommendations with explanations. This will enhance the learning experience for beginner programmers.
 
-By combining static code analysis and the power of open-source LLMs, your intelligent code reviewing tool can offer valuable insights and guidance, assisting beginner programmers in writing clean, maintainable, and well-formatted code. 
-
-
+By combining static code analysis and the power of open-source LLMs, your intelligent code reviewing tool can offer valuable insights and guidance, assisting beginner programmers in writing clean, maintainable, and well-formatted code.
 
 ## Corrections from Panel after Mini Defense
+
 1. Project Title: Remove coding conventions and make it centered on what the tool utilizes to solve the problem
 2. Remove footnotes from writeup
 3. Write more extensively on AI, CNN, ANN, and the supersets of LLMs. Write on Why LLMs were chosen for this problem.
 4. Write on relevant methods (ask dada what you should study up on)
-4. List the systems reviewed in the introduction of "Review of Relevant Systems".
-5. Centralize numbers on pages throughout the writeup.
-6. Reduce spaces between paragraphs and titles with other content.
+5. List the systems reviewed in the introduction of "Review of Relevant Systems".
+6. Centralize numbers on pages throughout the writeup.
+7. Reduce spaces between paragraphs and titles with other content.
+
+# Why Rust?
+
+- compiler obvi: look at the rust textbook for more info (chapter one)
