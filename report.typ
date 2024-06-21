@@ -17,7 +17,7 @@ I am extremely grateful to my parents, Mr and Mrs Ekekwe for their sacrifices, c
 
 \
 My sincere gratitude also goes to my hardworking supervisor, Dr Itunuoluwa Isewon, who provided her support even when she was on a work break. Thank you for your excellent supervision and guidance ma.],
-print: true,
+// print: true,
     content,
 )
 
@@ -1068,19 +1068,24 @@ The proposed system architecture consists of three layers. The Presentation Laye
 
     \
     #figure(
-        image("images/import3.png", 
-        width: 80%),
+        image("images/app.png", 
+        width: 90%),
         caption: [
             The code review screens
         ]
     ) 
+
+    === The Summary and Download Module
+    \
+    This module is where the summary of the code review process is presented to the user. The user can also download the reviewed code from the application.
 ])
 
 #pagebreak(weak: true)
 
 #par([
     = Summary, Recommendations and conclusion
-
+    \
+     
     == Preamble
     \ 
 
