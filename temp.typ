@@ -31,10 +31,9 @@
   }
 ]
 
-// make a table figure and break it across a page if need be
+// make a table figure
 #let table-figure(caption: none, data, lab: none) = [
   #set par(justify: false, leading: 0.85em)
-  #show figure: set block(breakable: true)
   #show figure: i-figured.show-figure
   #figure(
     caption: caption,
@@ -216,6 +215,16 @@
     }
   }
 
+  /************************* CITATIONS *************************/
+
+  // prose citations should use "and" instead of &
+  // this is a bug, tracking issue:
+  // https://github.com/typst/typst/issues/4549
+  show cite.where(form: "prose"): it => {
+    show "&": "and"
+    it
+  }
+
   /************************* SPECIAL PAGES *************************/
 
   /************************* TITLE *************************/
@@ -374,7 +383,7 @@
     }
 
     // manual heading and cover page elem
-    #heading[TABLE OF CONTENTS]
+    #heading[Table of Contents]
     *CONTENT* #box(width: 1fr) *PAGES*
 
     *COVER PAGE* #box(width: 1fr) *i*
@@ -410,7 +419,7 @@
       let c = []
       for value in it.body.fields().at("children").slice(4) {
         // once we see a space, the rest is probably source info. so stop
-        if value == [ ] {
+        if value == [\[] {
           break
         }
         c += value

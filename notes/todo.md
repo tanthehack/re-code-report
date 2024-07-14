@@ -11,7 +11,7 @@
 - [ ] In the explanations of programming conventions, change the examples to more complex code smells or programming convents in javascript
 - [x] Change the program of the project to javascript
 - [ ] Clean AI
-    - [ ] Abstract clean up
+    - [x] Abstract clean up
     - [x] Review of Static Analysis Clean up
-    - [ ] Chapter 4 Clean up, add one image each of the google form responses to each sub heading of the evaluation
-    - [ ] Chapter 5 Clean up
+    - [x] Chapter 4 Clean up, add one image each of the google form responses to each sub heading of the evaluation
+    - [x] Chapter 5 Clean up
