@@ -24,7 +24,7 @@
     
     I am extremely grateful to my parents, Mr. and Mrs. Ekekwe for their sacrifices, contributions, and prayers towards the completion of this degree. I am extremely privileged to have them in my life.
     
-    My sincere gratitude also goes to my hardworking supervisor and co-supervisor, Dr. Itunuoluwa Isewon and Ms. Nathaniel Jemimah, who continuously provided their support throughout this project duration. Thank you for your excellent supervision and guidance.
+    My sincere gratitude also goes to my hardworking supervisor and co-supervisor, Dr. Itunuoluwa M. Isewon and Ms. Nathaniel Jemimah, who continuously provided their support throughout this project duration. Thank you for your excellent supervision and guidance.
   ],
   abbreviations: (
     "LLM: Large Language Model",
@@ -66,12 +66,16 @@ While established code reviewing platforms like those offered by GitHub and Coda
 
 Intelligent code reviewing tools, designed specifically for beginners, can address this limitation by transforming code review into a powerful learning resource. These tools leverage AI and established coding standards to go beyond simply highlighting missed conventions @kim_understanding_2022. This study proposes a real-time mentor who does not just point out formatting issues (a language linter) but also suggests best practices and alternative approaches based on the specific code and its intended function. The shift towards a more interactive and personalized learning experience could significantly improve the quality, maintainability, and understanding of code written by beginners @shen_2020. Ultimately, this will lead to a smoother transition into professional software development by equipping them with the necessary skills to write clean, maintainable, and collaborative code from the outset. 
 
+#pagebreak(weak: true)
+
 == Statement of the Problem
 In the early stages of learning how to program, much attention is focused on how to implement basic functionality and compose a running program; thus, coding standards are usually disregarded. As noted by #cite(<Kirk_2020>, form: "prose"), there is a considerable gap in the instruction of code quality: 30% of introductory university programming courses include it. It is for this very reason that novice programmers are often unable to become very sensitive to code quality. Understandably, new programmers are eager to understand the basic functionalities of languages and develop programs that work, often neglecting to apply coding conventions during their development workflow @kohlbacher_common_2023. According to research conducted by #cite(<joni_but_1986>, form: "prose"), 90% of students used the wrong coding standards in programming exercises, and #cite(<ruvo_understanding_2018>, form: "prose") finds that these bad habits persist up till into students’ 4th year of a BS degree. New coders often avoid learning conventional methods; however, disregarding coding standards and conventions encourages bad coding habits that affect code readability, maintainability, and scalability in the long run @popic_benefits_2018.
 
 The effects of poor code quality don’t stop at the developers themselves. It adversely affects the software industry as a whole, by introducing a concept known as technical debt @han_does_2020. Technical debt is a metaphor that refers to the hidden costs of neglecting good coding practices. Just as financial debt accrues interest over time, poorly written code accumulates complexity and becomes harder to understand and modify as the project grows @digkas_can_2022. Poor code quality leads to problems such as higher costs as bug fixes and new features become cumbersome and an increased risk of software failure due to vulnerabilities.
 
 Although existing code review platforms offer insights into basic coding style issues, there’s an opportunity to enhance their capabilities for beginners, particularly by addressing the gap in feedback on the “why” behind conventions @wessel_what_2020. Understanding the rationale is crucial for preventing bad habits and tangled codes that create future maintenance and collaboration challenges. This highlights the need to integrate coding conventions into the learning process better. This study addresses this need by developing an intelligent code‐reviewing tool with a tutoring focus. A novel approach that has the potential to significantly improve the overall quality of code produced in our industry.
+
+#pagebreak(weak: true)
 
 == Aims and Objectives
 
@@ -136,6 +140,8 @@ The Interface of the system is designed to be easy and intuitive for new users. 
 
 While it does not include user research or the creation of entirely new LLM models, the project still intends to make existing pretrained open-source LLMs more effective by utilising prompt engineering techniques. It will involve development during the 16 weeks, and its target audience will be programmers at the beginner level who have some knowledge of JavaScript.
 With this scope, we make it clear that the project is focused on the task of development but, at the same time, serves a beneficial objective—providing a handy tool for empowering beginner-level programmers to improve their coding skills.
+
+#pagebreak(weak: true)
 
 == Limitations of the Study
 
@@ -265,6 +271,8 @@ This section reviews relevant concepts that are essential for understanding the 
 === Artificial Intelligence
 
 Artificial Intelligence can be termed as the study of intelligent agents that can act on stimulus or cues from their environment @russell_artificial_2016. It is based on machine learning algorithms and technologies, allowing machines to apply cognitive abilities and perform tasks autonomously or semi autonomously. According to #cite(<bartneck_what_2021>, form: "prose"), there are different aspects of artificial intelligence in which researchers focus on creating machines that think like humans, machines that act like humans, machines that act rationally, or machines that think rationally. There are many different types of AI systems utilized in the world today. Systems such as expert systems, neural networks, and genetic algorithms are all examples of AI systems that are used in various applications.
+
+#pagebreak(weak: true)
 
 === Machine Learning
 
@@ -419,8 +427,6 @@ An evaluation of the system was conducted by comparing the system’s feedback w
 The tutoring system’s effectiveness relies on a predefined set of exercises and rules, which may not cover the large potential scenarios encountered in real world coding. Additionally, the system requires manual effort from teachers to create model solutions for generating new rules. 
 Static analysis and LLMs have several advantages over the tutoring system. First, LLM based systems can learn and adapt from massive codebases, find more issues and keep up with changing coding practices. No need for a predefined set of exercises and manual rule creation by teachers in the tutoring system. LLMs can also analyse code for security issues, performance issues and even consider the code’s context for more precise feedback. The table 2.2 below shows a comparison of the features of the Refactor Tutor and the proposed intelligent code review tool.
 
-#pagebreak(weak: true)
-
 #table-figure(
   caption: "Comparison of features between the Refactor Tutor and the Proposed Intelligent Code Review System",
   table(
@@ -488,7 +494,7 @@ Codacy offers a user friendly and comprehensive SCA solution, but it has limitat
   )
 )
 
-== Summary of Literature Review
+== Summary
 
 This literature review looked at different methods and approaches to improving code quality. From Modern Code Review tools to automated Code Review tools, a code review system utilizing static analysis and LLMs (Large Language Models) emerged as a more promising solution LLM’s can learn continuously so can identify more code quality issues and adapt to changing coding practices. Additionally, an LLM can also analyse code for context specific nuances, introducing more comprehensive feedback than a static set of rules.
 
@@ -496,7 +502,7 @@ In general, LLM based code review is a more scalable, flexible, and efficient wa
 
 #pagebreak(weak: true)
 
-= Methodology or System Analysis and Design
+= System Analysis and Design
 
 == Preamble
 
@@ -712,6 +718,8 @@ The study involved initially following the waterfall model to define the system 
 == Implementation Tools
 
 These are the tools used to implement the system. They include the programming languages, libraries, and frameworks used to develop the system.
+
+#pagebreak(weak: true)
 
 === JavaScript 
 
